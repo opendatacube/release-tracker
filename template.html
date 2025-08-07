@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Open DataCube Release Tracker</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Open DataCube Release Tracker</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Package Name</th>
+                <th>PyPI Version</th>
+                <th>GitHub Version</th>
+                <th>GitHub Release Age (days)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for release in releases %}
+            <tr>
+                <td>{{ release.name }}</td>
+                <td>{{ release.pypi_version }}</td>
+                <td>{{ release.github_version }}</td>
+                <td>{{ release.github_release_age_days }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
