@@ -46,7 +46,7 @@
         </thead>
         <tbody>
             {% for release in releases %}
-            <tr>
+            <tr data-original-index="{{ loop.index0 }}">
                 <td><a href="https://pypi.org/project/{{ release.pypi_name }}">{{ release.name }}</a></td>
                 <td>
                     <a href="{{ release.pypi_stable_url }}">{{ release.pypi_stable_version }}</a>
@@ -58,13 +58,13 @@
                 </td>
                 <td>
                     {% if release.pypi_stable_published_at != 'N/A' %}
-                        {{ (now - (release.pypi_stable_published_at | to_datetime)).days }} days old ({{ release.pypi_stable_published_at | to_datetime | date("%d %B %Y") }})
+                        {{ (now - (release.pypi_stable_published_at | to_datetime)).days }} day{{ 's' if (now - (release.pypi_stable_published_at | to_datetime)).days != 1 else '' }} ago ({{ release.pypi_stable_published_at | to_datetime | date("%d %B %Y") }})
                     {% else %}
                         N/A
                     {% endif %}
                     {% if release.pypi_prerelease and release.pypi_stable_version != 'N/A' and (release.pypi_prerelease.version | version_compare(release.pypi_stable_version)) > 0 %}
                         <br><span class="prerelease">
-                            ({{ (now - (release.pypi_prerelease.published_at | to_datetime)).days }} days old)
+                            ({{ (now - (release.pypi_prerelease.published_at | to_datetime)).days }} day{{ 's' if (now - (release.pypi_prerelease.published_at | to_datetime)).days != 1 else '' }} ago)
                         </span>
                     {% endif %}
                 </td>
@@ -73,7 +73,7 @@
                 </td>
                 <td>
                     {% if release.github_stable_published_at != 'N/A' %}
-                        {{ (now - (release.github_stable_published_at | to_datetime)).days }} days old ({{ release.github_stable_published_at | to_datetime | date("%d %B %Y") }})
+                        {{ (now - (release.github_stable_published_at | to_datetime)).days }} day{{ 's' if (now - (release.github_stable_published_at | to_datetime)).days != 1 else '' }} ago ({{ release.github_stable_published_at | to_datetime | date("%d %B %Y") }})
                     {% else %}
                         N/A
                     {% endif %}
@@ -88,27 +88,62 @@
             const table = document.getElementById("release-table");
             const headers = table.querySelectorAll("th");
             const tbody = table.querySelector("tbody");
+            const initialRows = Array.from(tbody.querySelectorAll("tr")); // Store initial order
+
+            let currentSortColumn = null;
+            let currentSortOrder = "none"; // "none", "asc", "desc"
 
             headers.forEach(header => {
                 header.addEventListener("click", () => {
                     const sortKey = header.dataset.sort;
-                    const sortOrder = header.classList.contains("sort-asc") ? "desc" : "asc";
+                    let newSortOrder;
 
-                    headers.forEach(h => h.classList.remove("sort-asc", "sort-desc"));
-                    header.classList.add(sortOrder === "asc" ? "sort-asc" : "sort-desc");
-
-                    const rows = Array.from(tbody.querySelectorAll("tr"));
-
-                    rows.sort((a, b) => {
-                        const aValue = a.querySelector(`td:nth-child(${getColumnIndex(header)})`).textContent;
-                        const bValue = b.querySelector(`td:nth-child(${getColumnIndex(header)})`).textContent;
-
-                        if (isNaN(aValue) || isNaN(bValue)) {
-                            return sortOrder === "asc" ? aValue.localeCompare(bValue) : bValue.localeCompare(aValue);
+                    if (currentSortColumn === header) {
+                        if (currentSortOrder === "asc") {
+                            newSortOrder = "desc";
+                        } else if (currentSortOrder === "desc") {
+                            newSortOrder = "none"; // Third click, revert to original
                         } else {
-                            return sortOrder === "asc" ? aValue - bValue : bValue - aValue;
+                            newSortOrder = "asc"; // Revert from original, start asc
                         }
-                    });
+                    } else {
+                        newSortOrder = "asc"; // New column, start asc
+                        currentSortColumn = header;
+                    }
+
+                    // Clear all sort indicators
+                    headers.forEach(h => h.classList.remove("sort-asc", "sort-desc"));
+
+                    if (newSortOrder !== "none") {
+                        header.classList.add(newSortOrder === "asc" ? "sort-asc" : "sort-desc");
+                    }
+                    currentSortOrder = newSortOrder;
+
+                    let rows = Array.from(tbody.querySelectorAll("tr"));
+
+                    if (currentSortOrder === "none") {
+                        rows.sort((a, b) => parseInt(a.dataset.originalIndex) - parseInt(b.dataset.originalIndex));
+                    } else {
+                        rows.sort((a, b) => {
+                            const aCell = a.querySelector(`td:nth-child(${getColumnIndex(header)})`);
+                            const bCell = b.querySelector(`td:nth-child(${getColumnIndex(header)})`);
+
+                            let aValue = aCell.textContent.trim();
+                            let bValue = bCell.textContent.trim();
+
+                            // Extract numeric value for age columns
+                            if (sortKey.includes("_age_days")) {
+                                aValue = parseFloat(aValue.split(" ")[0]) || 0; // "22 days ago" -> 22
+                                bValue = parseFloat(bValue.split(" ")[0]) || 0; // "N/A" -> 0
+                            }
+
+                            if (typeof aValue === 'number' && typeof bValue === 'number') {
+                                return currentSortOrder === "asc" ? aValue - bValue : bValue - aValue;
+                            } else {
+                                return currentSortOrder === "asc" ? aValue.localeCompare(bValue) : bValue.localeCompare(aValue);
+                            }
+                        });
+                    }
 
                     rows.forEach(row => tbody.appendChild(row));
                 });
