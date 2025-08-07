@@ -247,5 +247,35 @@
             }
         });
     </script>
+  <div id="last-checked-info" style="text-align: center; margin-top: 20px; font-size: 0.8em; color: #888;"></div>
+
+  <script>
+    async function getLastWorkflowRun() {
+      const owner = 'omad'; // Assuming 'odc' is the owner based on the path
+      const repo = 'release-tracker';
+      const workflowFileName = 'update.yml';
+      const url = `https://api.github.com/repos/${owner}/${repo}/actions/workflows/${workflowFileName}/runs`;
+
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`GitHub API error: ${response.statusText}`);
+        }
+        const data = await response.json();
+        if (data.workflow_runs && data.workflow_runs.length > 0) {
+          const lastRun = data.workflow_runs[0];
+          const lastCheckedDate = new Date(lastRun.created_at);
+          document.getElementById('last-checked-info').innerText = `Last checked: ${lastCheckedDate.toLocaleString()}`;
+        } else {
+          document.getElementById('last-checked-info').innerText = 'Last checked: N/A (No workflow runs found)';
+        }
+      } catch (error) {
+        console.error('Error fetching workflow run:', error);
+        document.getElementById('last-checked-info').innerText = `Last checked: Error (${error.message})`;
+      }
+    }
+
+    getLastWorkflowRun();
+  </script>
 </body>
 </html>
