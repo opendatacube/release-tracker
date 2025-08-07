@@ -136,6 +136,7 @@
                 <th data-sort="pypi_stable_age_days">PyPI Age</th>
                 <th data-sort="github_stable_version">GitHub Version</th>
                 <th data-sort="github_stable_age_days">GitHub Age</th>
+                <th data-sort="conda_forge_version">Conda-Forge Version</th>
             </tr>
         </thead>
         <tbody>
@@ -177,6 +178,13 @@
                             <span>N/A</span>
                         {% endif %}
                     </div>
+                </td>
+                <td>
+                    {% if release.conda_forge_version != 'N/A' %}
+                        <a href="{{ release.conda_forge_url }}">{{ release.conda_forge_version }}</a>
+                    {% else %}
+                        <span>N/A</span>
+                    {% endif %}
                 </td>
             </tr>
             {% endfor %}
@@ -237,6 +245,16 @@
                                 const aDate = new Date(aCell.querySelector('[data-published-at]').dataset.publishedAt);
                                 const bDate = new Date(bCell.querySelector('[data-published-at]').dataset.publishedAt);
                                 return currentSortOrder === "asc" ? aDate.getTime() - bDate.getTime() : bDate.getTime() - aDate.getTime();
+                            } else if (sortKey === "conda_forge_version") {
+                                // For version strings, use parse_version for accurate comparison
+                                const parseVersion = (versionStr) => {
+                                    // Simple parsing for now, can be replaced with a more robust library if needed
+                                    const parts = versionStr.split('.').map(Number);
+                                    return parts[0] * 1000000 + parts[1] * 1000 + parts[2]; // Assuming major.minor.patch
+                                };
+                                const aVersion = parseVersion(aValue);
+                                const bVersion = parseVersion(bValue);
+                                return currentSortOrder === "asc" ? aVersion - bVersion : bVersion - aVersion;
                             } else {
                                 return currentSortOrder === "asc" ? aValue.localeCompare(bValue) : bValue.localeCompare(aValue);
                             }

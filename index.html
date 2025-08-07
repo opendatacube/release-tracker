@@ -136,6 +136,7 @@
                 <th data-sort="pypi_stable_age_days">PyPI Age</th>
                 <th data-sort="github_stable_version">GitHub Version</th>
                 <th data-sort="github_stable_age_days">GitHub Age</th>
+                <th data-sort="conda_forge_version">Conda-Forge Version</th>
             </tr>
         </thead>
         <tbody>
@@ -166,6 +167,11 @@
                         
                     </div>
                 </td>
+                <td>
+                    
+                        <a href="https://anaconda.org/conda-forge/datacube">1.9.7</a>
+                    
+                </td>
             </tr>
             
             <tr data-original-index="1">
@@ -194,6 +200,11 @@
                         
                     </div>
                 </td>
+                <td>
+                    
+                        <a href="https://anaconda.org/conda-forge/odc-stac">0.4.0</a>
+                    
+                </td>
             </tr>
             
             <tr data-original-index="2">
@@ -220,6 +231,11 @@
                             <span>N/A</span>
                         
                     </div>
+                </td>
+                <td>
+                    
+                        <a href="https://anaconda.org/conda-forge/odc-stats">1.0.47</a>
+                    
                 </td>
             </tr>
             
@@ -257,6 +273,11 @@
                         
                     </div>
                 </td>
+                <td>
+                    
+                        <a href="https://anaconda.org/conda-forge/odc-geo">0.5.0rc1</a>
+                    
+                </td>
             </tr>
             
             <tr data-original-index="4">
@@ -284,6 +305,11 @@
                             <span class="date">(17 June 2025)</span>
                         
                     </div>
+                </td>
+                <td>
+                    
+                        <a href="https://anaconda.org/conda-forge/odc-algo">1.0.1</a>
+                    
                 </td>
             </tr>
             
@@ -313,6 +339,11 @@
                         
                     </div>
                 </td>
+                <td>
+                    
+                        <span>N/A</span>
+                    
+                </td>
             </tr>
             
             <tr data-original-index="6">
@@ -341,6 +372,11 @@
                         
                     </div>
                 </td>
+                <td>
+                    
+                        <span>N/A</span>
+                    
+                </td>
             </tr>
             
             <tr data-original-index="7">
@@ -368,6 +404,11 @@
                             <span class="date">(23 December 2024)</span>
                         
                     </div>
+                </td>
+                <td>
+                    
+                        <span>N/A</span>
+                    
                 </td>
             </tr>
             
@@ -405,6 +446,11 @@
                         
                     </div>
                 </td>
+                <td>
+                    
+                        <a href="https://anaconda.org/conda-forge/odc-loader">0.5.1</a>
+                    
+                </td>
             </tr>
             
             <tr data-original-index="9">
@@ -431,6 +477,11 @@
                             <span>N/A</span>
                         
                     </div>
+                </td>
+                <td>
+                    
+                        <a href="https://anaconda.org/conda-forge/odc-dscache">0.2.3</a>
+                    
                 </td>
             </tr>
             
@@ -460,6 +511,11 @@
                         
                     </div>
                 </td>
+                <td>
+                    
+                        <a href="https://anaconda.org/conda-forge/eodatasets3">1.9.3</a>
+                    
+                </td>
             </tr>
             
             <tr data-original-index="11">
@@ -486,6 +542,11 @@
                             <span>N/A</span>
                         
                     </div>
+                </td>
+                <td>
+                    
+                        <a href="https://anaconda.org/conda-forge/odc-io">0.2.2</a>
+                    
                 </td>
             </tr>
             
@@ -514,6 +575,11 @@
                         
                     </div>
                 </td>
+                <td>
+                    
+                        <a href="https://anaconda.org/conda-forge/odc-cloud">0.2.5</a>
+                    
+                </td>
             </tr>
             
             <tr data-original-index="13">
@@ -540,6 +606,11 @@
                             <span>N/A</span>
                         
                     </div>
+                </td>
+                <td>
+                    
+                        <span>N/A</span>
+                    
                 </td>
             </tr>
             
@@ -568,6 +639,11 @@
                         
                     </div>
                 </td>
+                <td>
+                    
+                        <span>N/A</span>
+                    
+                </td>
             </tr>
             
             <tr data-original-index="15">
@@ -594,6 +670,11 @@
                             <span>N/A</span>
                         
                     </div>
+                </td>
+                <td>
+                    
+                        <a href="https://anaconda.org/conda-forge/odc-apps-dc-tools">1.9.3</a>
+                    
                 </td>
             </tr>
             
@@ -654,6 +735,16 @@
                                 const aDate = new Date(aCell.querySelector('[data-published-at]').dataset.publishedAt);
                                 const bDate = new Date(bCell.querySelector('[data-published-at]').dataset.publishedAt);
                                 return currentSortOrder === "asc" ? aDate.getTime() - bDate.getTime() : bDate.getTime() - aDate.getTime();
+                            } else if (sortKey === "conda_forge_version") {
+                                // For version strings, use parse_version for accurate comparison
+                                const parseVersion = (versionStr) => {
+                                    // Simple parsing for now, can be replaced with a more robust library if needed
+                                    const parts = versionStr.split('.').map(Number);
+                                    return parts[0] * 1000000 + parts[1] * 1000 + parts[2]; // Assuming major.minor.patch
+                                };
+                                const aVersion = parseVersion(aValue);
+                                const bVersion = parseVersion(bValue);
+                                return currentSortOrder === "asc" ? aVersion - bVersion : bVersion - aVersion;
                             } else {
                                 return currentSortOrder === "asc" ? aValue.localeCompare(bValue) : bValue.localeCompare(aValue);
                             }

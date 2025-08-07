@@ -21,10 +21,14 @@ def get_github_releases(repo, github_token=None):
     response = requests.get(url, headers=headers)
 
     if response.status_code == 403 or response.status_code == 429:
-        print(f"Error: GitHub API rate limit exceeded or forbidden for {repo}. Status code: {response.status_code}")
+        print(
+            f"Error: GitHub API rate limit exceeded or forbidden for {repo}. Status code: {response.status_code}"
+        )
         exit(1)
     elif response.status_code != 200:
-        print(f"Error: Failed to fetch GitHub releases for {repo}. Status code: {response.status_code}")
+        print(
+            f"Error: Failed to fetch GitHub releases for {repo}. Status code: {response.status_code}"
+        )
         return None, None
 
     releases = response.json()
@@ -46,7 +50,9 @@ def get_pypi_releases(package_name):
     url = f"https://pypi.org/pypi/{package_name}/json"
     response = requests.get(url)
     if response.status_code != 200:
-        print(f"Error: Failed to fetch PyPI releases for {package_name}. Status code: {response.status_code}")
+        print(
+            f"Error: Failed to fetch PyPI releases for {package_name}. Status code: {response.status_code}"
+        )
         return None, None
 
     data = response.json()
@@ -89,10 +95,36 @@ def get_pypi_releases(package_name):
     return latest_stable, latest_prerelease
 
 
+def get_conda_forge_releases(package_name):
+    """Fetches the latest version from conda-forge for a given package."""
+    url = f"https://api.anaconda.org/package/conda-forge/{package_name}"
+    response = requests.get(url)
+    if response.status_code != 200:
+        print(
+            f"Error: Failed to fetch Conda-Forge releases for {package_name}. Status code: {response.status_code}"
+        )
+        return None
+
+    data = response.json()
+    latest_version = data.get("latest_version")
+    if latest_version:
+        return {
+            "version": latest_version,
+            "url": f"https://anaconda.org/conda-forge/{package_name}",
+        }
+    return None
+
+
 def main():
     """Main function to update release information."""
-    parser = argparse.ArgumentParser(description="Update Open Data Cube release information.")
-    parser.add_argument("--render-only", action="store_true", help="Only re-render the HTML from releases.json, do not fetch new data.")
+    parser = argparse.ArgumentParser(
+        description="Update Open Data Cube release information."
+    )
+    parser.add_argument(
+        "--render-only",
+        action="store_true",
+        help="Only re-render the HTML from releases.json, do not fetch new data.",
+    )
     args = parser.parse_args()
 
     if args.render_only:
@@ -109,10 +141,13 @@ def main():
         for package in packages:
             github_repo = package["github"]
             if github_repo not in github_cache:
-                github_cache[github_repo] = get_github_releases(github_repo, github_token)
+                github_cache[github_repo] = get_github_releases(
+                    github_repo, github_token
+                )
             github_stable, _ = github_cache[github_repo]
 
             pypi_stable, pypi_prerelease = get_pypi_releases(package["pypi_name"])
+            conda_forge_release = get_conda_forge_releases(package["pypi_name"])
 
             release_info = {
                 "name": package["name"],
@@ -122,7 +157,9 @@ def main():
                 "pypi_stable_url": pypi_stable["url"]
                 if pypi_stable
                 else f"https://pypi.org/project/{package['pypi_name']}/",
-                "pypi_stable_published_at": pypi_stable["published_at"] if pypi_stable else "N/A",
+                "pypi_stable_published_at": pypi_stable["published_at"]
+                if pypi_stable
+                else "N/A",
                 "pypi_prerelease": pypi_prerelease,
                 "github_stable_version": github_stable["version"]
                 if github_stable
@@ -130,10 +167,16 @@ def main():
                 "github_stable_url": github_stable["url"]
                 if github_stable
                 else f"https://github.com/{package['github']}",
-                "github_stable_published_at": github_stable["published_at"] if github_stable else "N/A",
+                "github_stable_published_at": github_stable["published_at"]
+                if github_stable
+                else "N/A",
+                "conda_forge_version": conda_forge_release["version"]
+                if conda_forge_release
+                else "N/A",
+                "conda_forge_url": conda_forge_release["url"]
+                if conda_forge_release
+                else f"https://anaconda.org/conda-forge/{package['pypi_name']}",
             }
-
-            
 
             release_data.append(release_info)
 
