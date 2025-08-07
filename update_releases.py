@@ -113,12 +113,15 @@ def main():
             "pypi_stable_url": pypi_stable["url"]
             if pypi_stable
             else f"https://pypi.org/project/{package['pypi_name']}/",
+            "pypi_stable_published_at": pypi_stable["published_at"] if pypi_stable else "N/A",
+            "pypi_prerelease": pypi_prerelease,
             "github_stable_version": github_stable["version"]
             if github_stable
             else "N/A",
             "github_stable_url": github_stable["url"]
             if github_stable
             else f"https://github.com/{package['github']}",
+            "github_stable_published_at": github_stable["published_at"] if github_stable else "N/A",
         }
 
         if pypi_stable and pypi_stable["published_at"]:
@@ -129,20 +132,7 @@ def main():
         else:
             release_info["pypi_stable_age_days"] = "N/A"
 
-        if pypi_prerelease and pypi_prerelease["published_at"]:
-            pypi_prerelease_published_at = datetime.fromisoformat(
-                pypi_prerelease["published_at"]
-            )
-            pypi_prerelease_age_days = (
-                datetime.now(UTC) - pypi_prerelease_published_at
-            ).days
-
-            if pypi_stable and parse_version(
-                pypi_prerelease["version"]
-            ) > parse_version(pypi_stable["version"]):
-                release_info["pypi_stable_version"] += (
-                    f'<br><span class="prerelease">{pypi_prerelease["version"]} ({pypi_prerelease_age_days} days old)</span>'
-                )
+        # No longer handling PyPI prerelease templating in Python
 
         if github_stable and github_stable["published_at"]:
             published_at = datetime.fromisoformat(
@@ -162,10 +152,23 @@ def main():
     template_loader = jinja2.FileSystemLoader(searchpath="./")
     template_env = jinja2.Environment(loader=template_loader)
 
+    def version_compare_filter(version1, version2):
+        return parse_version(version1) > parse_version(version2)
+
+    def to_datetime_filter(date_str):
+        return datetime.fromisoformat(date_str.replace("Z", "+00:00"))
+
+    def date_filter(dt_obj, fmt):
+        return dt_obj.strftime(fmt)
+
+    template_env.filters["version_compare"] = version_compare_filter
+    template_env.filters["to_datetime"] = to_datetime_filter
+    template_env.filters["date"] = date_filter
+
     # Render the combined table template
     template_combined = template_env.get_template("template.html")
     with open("index.html", "w") as f:
-        f.write(template_combined.render(releases=release_data))
+        f.write(template_combined.render(releases=release_data, now=datetime.now(UTC)))
 
 
 if __name__ == "__main__":

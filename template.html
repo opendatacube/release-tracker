@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Open DataCube Release Tracker</title>
+    <title>Open Data Cube Release Tracker</title>
     <style>
         body {
             font-family: sans-serif;
@@ -33,7 +33,7 @@
     </style>
 </head>
 <body>
-    <h1>Open DataCube Release Tracker</h1>
+    <h1>Open Data Cube Release Tracker</h1>
     <table id="release-table">
         <thead>
             <tr>
@@ -48,10 +48,36 @@
             {% for release in releases %}
             <tr>
                 <td><a href="https://pypi.org/project/{{ release.pypi_name }}">{{ release.name }}</a></td>
-                <td><a href="{{ release.pypi_stable_url }}">{{ release.pypi_stable_version | safe }}</a></td>
-                <td>{{ release.pypi_stable_age_days }}</td>
-                <td><a href="{{ release.github_stable_url }}">{{ release.github_stable_version }}</a></td>
-                <td>{{ release.github_stable_age_days }}</td>
+                <td>
+                    <a href="{{ release.pypi_stable_url }}">{{ release.pypi_stable_version }}</a>
+                    {% if release.pypi_prerelease and release.pypi_stable_version != 'N/A' and (release.pypi_prerelease.version | version_compare(release.pypi_stable_version)) > 0 %}
+                        <br><span class="prerelease">
+                            <a href="{{ release.pypi_prerelease.url }}">{{ release.pypi_prerelease.version }}</a>
+                        </span>
+                    {% endif %}
+                </td>
+                <td>
+                    {% if release.pypi_stable_published_at != 'N/A' %}
+                        {{ (now - (release.pypi_stable_published_at | to_datetime)).days }} days old ({{ release.pypi_stable_published_at | to_datetime | date("%d %B %Y") }})
+                    {% else %}
+                        N/A
+                    {% endif %}
+                    {% if release.pypi_prerelease and release.pypi_stable_version != 'N/A' and (release.pypi_prerelease.version | version_compare(release.pypi_stable_version)) > 0 %}
+                        <br><span class="prerelease">
+                            ({{ (now - (release.pypi_prerelease.published_at | to_datetime)).days }} days old)
+                        </span>
+                    {% endif %}
+                </td>
+                <td>
+                    <a href="{{ release.github_stable_url }}">{{ release.github_stable_version }}</a>
+                </td>
+                <td>
+                    {% if release.github_stable_published_at != 'N/A' %}
+                        {{ (now - (release.github_stable_published_at | to_datetime)).days }} days old ({{ release.github_stable_published_at | to_datetime | date("%d %B %Y") }})
+                    {% else %}
+                        N/A
+                    {% endif %}
+                </td>
             </tr>
             {% endfor %}
         </tbody>
