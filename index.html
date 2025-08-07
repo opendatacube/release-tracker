@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Open Data Cube Release Tracker</title>
+    <title>Open Data Cube Package Releases</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -112,10 +112,22 @@
         td:nth-child(2) .prerelease, td:nth-child(4) .prerelease {
             margin-top: 11px; /* Add some space between stable and prerelease */
         }
+        #last-checked-info {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.8em;
+            color: #888;
+        }
+        .repo-link-container {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 0.8em;
+            color: #888;
+        }
     </style>
 </head>
 <body>
-    <h1>Open Data Cube Release Tracker</h1>
+    <h1>Open Data Cube Package Releases</h1>
     <table id="release-table">
         <thead>
             <tr>
@@ -682,11 +694,11 @@
             setInterval(calculateAndDisplayAge, 3600000); // Update every hour (3600000 ms)
         });
     </script>
-  <div id="last-checked-info" style="text-align: center; margin-top: 20px; font-size: 0.8em; color: #888;"></div>
+  <div id="last-checked-info"></div>
 
   <script>
     async function getLastWorkflowRun() {
-      const owner = 'omad'; // Assuming 'odc' is the owner based on the path
+      const owner = 'opendatacube'; // Assuming 'odc' is the owner based on the path
       const repo = 'release-tracker';
       const workflowFileName = 'update.yml';
       const url = `https://api.github.com/repos/${owner}/${repo}/actions/workflows/${workflowFileName}/runs`;
@@ -700,7 +712,8 @@
         if (data.workflow_runs && data.workflow_runs.length > 0) {
           const lastRun = data.workflow_runs[0];
           const lastCheckedDate = new Date(lastRun.created_at);
-          document.getElementById('last-checked-info').innerText = `Last checked: ${lastCheckedDate.toLocaleString()}`;
+          const lastCheckedElement = document.getElementById('last-checked-info');
+          lastCheckedElement.innerHTML = `Last checked: <a href="${lastRun.html_url}" target="_blank">${lastCheckedDate.toLocaleString()}</a>`;
         } else {
           document.getElementById('last-checked-info').innerText = 'Last checked: N/A (No workflow runs found)';
         }
@@ -712,5 +725,8 @@
 
     getLastWorkflowRun();
   </script>
+  <div class="repo-link-container">
+    <a href="https://github.com/opendatacube/release-tracker" target="_blank">Release tracker project on GitHub</a>
+  </div>
 </body>
 </html>
