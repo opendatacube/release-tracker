@@ -124,6 +124,79 @@
             font-size: 0.8em;
             color: #888;
         }
+
+        /* --- Mobile Responsive Styles --- */
+        @media screen and (max-width: 768px) {
+            #release-table {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            #release-table thead {
+                /* Hide the table header on mobile */
+                display: none;
+            }
+            #release-table tr {
+                /* Each row becomes a card */
+                display: block;
+                margin-bottom: 20px;
+                border-radius: 8px;
+                border: 1px solid #e0e0e0;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+                background-color: #fff; /* Ensure all cards have a white background */
+            }
+            #release-table tbody tr:nth-child(even) {
+                background-color: #fff; /* Override zebra striping for card view */
+            }
+            #release-table td {
+                display: block;
+                border: none;
+                border-bottom: 1px solid #f0f0f0;
+                padding: 12px 15px;
+                /* Create a two-column layout for Label: Value */
+                text-align: right; /* Align value to the right */
+            }
+            #release-table td:last-child {
+                border-bottom: none;
+            }
+            #release-table td::before {
+                /* This is the label */
+                content: attr(data-label);
+                float: left;
+                font-weight: 600;
+                color: #495057;
+                text-align: left;
+                padding-right: 15px; /* Space between label and value */
+            }
+            #release-table td:nth-of-type(1) {
+                /* Make the first cell (Package Name) a card header */
+                background-color: #f8f9fa;
+                border-top-left-radius: 8px;
+                border-top-right-radius: 8px;
+                text-align: left; /* Align header to the left */
+            }
+             #release-table td:nth-of-type(1) a {
+                font-weight: bold;
+                font-size: 1.1em;
+                color: #2c3e50;
+            }
+            /* Add the labels using the ::before pseudo-element */
+            #release-table td:nth-of-type(1)::before { content: ""; } /* No label for the card header */
+            #release-table td:nth-of-type(2)::before { content: "PyPI Version"; }
+            #release-table td:nth-of-type(3)::before { content: "PyPI Age"; }
+            #release-table td:nth-of-type(4)::before { content: "GitHub Version"; }
+            #release-table td:nth-of-type(5)::before { content: "GitHub Age"; }
+            #release-table td:nth-of-type(6)::before { content: "Conda-Forge"; }
+
+            /* Adjust content alignment within the right-aligned td */
+            #release-table td .age-display {
+                align-items: flex-end; /* Align age items to the right */
+            }
+            #release-table td > *, #release-table td .age-display {
+                display: inline-block; /* Allow elements to sit correctly on the right */
+                text-align: right;
+                vertical-align: middle;
+            }
+        }
     </style>
 </head>
 <body>
@@ -142,8 +215,8 @@
         <tbody>
             {% for release in releases %}
             <tr data-original-index="{{ loop.index0 }}">
-                <td><a href="https://pypi.org/project/{{ release.pypi_name }}">{{ release.name }}</a></td>
-                <td>
+                <td data-label="Package"><a href="https://pypi.org/project/{{ release.pypi_name }}">{{ release.name }}</a></td>
+                <td data-label="PyPI Version">
                     <a href="{{ release.pypi_stable_url }}">{{ release.pypi_stable_version }}</a>
                     {% if release.pypi_prerelease and release.pypi_stable_version != 'N/A' and (release.pypi_prerelease.version | version_compare(release.pypi_stable_version)) > 0 %}
                         <span class="prerelease">
@@ -151,7 +224,7 @@
                         </span>
                     {% endif %}
                 </td>
-                <td>
+                <td data-label="PyPI Age">
                     <div class="age-display">
                         {% if release.pypi_stable_published_at != 'N/A' %}
                             <span class="pypi-stable-age" data-published-at="{{ release.pypi_stable_published_at }}"></span>
@@ -166,10 +239,10 @@
                         {% endif %}
                     </div>
                 </td>
-                <td>
+                <td data-label="GitHub Version">
                     <a href="{{ release.github_stable_url }}">{{ release.github_stable_version }}</a>
                 </td>
-                <td>
+                <td data-label="GitHub Age">
                     <div class="age-display">
                         {% if release.github_stable_published_at != 'N/A' %}
                             <span class="github-stable-age" data-published-at="{{ release.github_stable_published_at }}"></span>
@@ -179,7 +252,7 @@
                         {% endif %}
                     </div>
                 </td>
-                <td>
+                <td data-label="Conda-Forge Version">
                     {% if release.conda_forge_version != 'N/A' %}
                         <a href="{{ release.conda_forge_url }}">{{ release.conda_forge_version }}</a>
                     {% else %}
@@ -203,6 +276,10 @@
 
             headers.forEach(header => {
                 header.addEventListener("click", () => {
+                    // Sorting is a desktop-only feature, disable on mobile view
+                    if (window.innerWidth <= 768) {
+                        return;
+                    }
                     const sortKey = header.dataset.sort;
                     let newSortOrder;
 

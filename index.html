@@ -124,6 +124,79 @@
             font-size: 0.8em;
             color: #888;
         }
+
+        /* --- Mobile Responsive Styles --- */
+        @media screen and (max-width: 768px) {
+            #release-table {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            #release-table thead {
+                /* Hide the table header on mobile */
+                display: none;
+            }
+            #release-table tr {
+                /* Each row becomes a card */
+                display: block;
+                margin-bottom: 20px;
+                border-radius: 8px;
+                border: 1px solid #e0e0e0;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+                background-color: #fff; /* Ensure all cards have a white background */
+            }
+            #release-table tbody tr:nth-child(even) {
+                background-color: #fff; /* Override zebra striping for card view */
+            }
+            #release-table td {
+                display: block;
+                border: none;
+                border-bottom: 1px solid #f0f0f0;
+                padding: 12px 15px;
+                /* Create a two-column layout for Label: Value */
+                text-align: right; /* Align value to the right */
+            }
+            #release-table td:last-child {
+                border-bottom: none;
+            }
+            #release-table td::before {
+                /* This is the label */
+                content: attr(data-label);
+                float: left;
+                font-weight: 600;
+                color: #495057;
+                text-align: left;
+                padding-right: 15px; /* Space between label and value */
+            }
+            #release-table td:nth-of-type(1) {
+                /* Make the first cell (Package Name) a card header */
+                background-color: #f8f9fa;
+                border-top-left-radius: 8px;
+                border-top-right-radius: 8px;
+                text-align: left; /* Align header to the left */
+            }
+             #release-table td:nth-of-type(1) a {
+                font-weight: bold;
+                font-size: 1.1em;
+                color: #2c3e50;
+            }
+            /* Add the labels using the ::before pseudo-element */
+            #release-table td:nth-of-type(1)::before { content: ""; } /* No label for the card header */
+            #release-table td:nth-of-type(2)::before { content: "PyPI Version"; }
+            #release-table td:nth-of-type(3)::before { content: "PyPI Age"; }
+            #release-table td:nth-of-type(4)::before { content: "GitHub Version"; }
+            #release-table td:nth-of-type(5)::before { content: "GitHub Age"; }
+            #release-table td:nth-of-type(6)::before { content: "Conda-Forge"; }
+
+            /* Adjust content alignment within the right-aligned td */
+            #release-table td .age-display {
+                align-items: flex-end; /* Align age items to the right */
+            }
+            #release-table td > *, #release-table td .age-display {
+                display: inline-block; /* Allow elements to sit correctly on the right */
+                text-align: right;
+                vertical-align: middle;
+            }
+        }
     </style>
 </head>
 <body>
@@ -142,12 +215,12 @@
         <tbody>
             
             <tr data-original-index="0">
-                <td><a href="https://pypi.org/project/datacube">datacube-core</a></td>
-                <td>
+                <td data-label="Package"><a href="https://pypi.org/project/datacube">datacube-core</a></td>
+                <td data-label="PyPI Version">
                     <a href="https://pypi.org/project/datacube/1.9.7/">1.9.7</a>
                     
                 </td>
-                <td>
+                <td data-label="PyPI Age">
                     <div class="age-display">
                         
                             <span class="pypi-stable-age" data-published-at="2025-08-05T03:43:30.771732Z"></span>
@@ -156,10 +229,10 @@
                         
                     </div>
                 </td>
-                <td>
+                <td data-label="GitHub Version">
                     <a href="https://github.com/opendatacube/datacube-core/releases/tag/1.9.7">1.9.7</a>
                 </td>
-                <td>
+                <td data-label="GitHub Age">
                     <div class="age-display">
                         
                             <span class="github-stable-age" data-published-at="2025-08-05T03:34:09Z"></span>
@@ -167,7 +240,7 @@
                         
                     </div>
                 </td>
-                <td>
+                <td data-label="Conda-Forge Version">
                     
                         <a href="https://anaconda.org/conda-forge/datacube">1.9.7</a>
                     
@@ -175,12 +248,12 @@
             </tr>
             
             <tr data-original-index="1">
-                <td><a href="https://pypi.org/project/odc-stac">odc-stac</a></td>
-                <td>
+                <td data-label="Package"><a href="https://pypi.org/project/odc-stac">odc-stac</a></td>
+                <td data-label="PyPI Version">
                     <a href="https://pypi.org/project/odc-stac/0.4.0/">0.4.0</a>
                     
                 </td>
-                <td>
+                <td data-label="PyPI Age">
                     <div class="age-display">
                         
                             <span class="pypi-stable-age" data-published-at="2025-05-01T05:20:49.632058Z"></span>
@@ -189,10 +262,10 @@
                         
                     </div>
                 </td>
-                <td>
+                <td data-label="GitHub Version">
                     <a href="https://github.com/opendatacube/odc-stac/releases/tag/v0.4.0">v0.4.0</a>
                 </td>
-                <td>
+                <td data-label="GitHub Age">
                     <div class="age-display">
                         
                             <span class="github-stable-age" data-published-at="2025-05-01T05:27:38Z"></span>
@@ -200,7 +273,7 @@
                         
                     </div>
                 </td>
-                <td>
+                <td data-label="Conda-Forge Version">
                     
                         <a href="https://anaconda.org/conda-forge/odc-stac">0.4.0</a>
                     
@@ -208,12 +281,12 @@
             </tr>
             
             <tr data-original-index="2">
-                <td><a href="https://pypi.org/project/odc-stats">odc-stats</a></td>
-                <td>
+                <td data-label="Package"><a href="https://pypi.org/project/odc-stats">odc-stats</a></td>
+                <td data-label="PyPI Version">
                     <a href="https://pypi.org/project/odc-stats/1.9.2/">1.9.2</a>
                     
                 </td>
-                <td>
+                <td data-label="PyPI Age">
                     <div class="age-display">
                         
                             <span class="pypi-stable-age" data-published-at="2025-07-16T02:26:00.716583Z"></span>
@@ -222,17 +295,17 @@
                         
                     </div>
                 </td>
-                <td>
+                <td data-label="GitHub Version">
                     <a href="https://github.com/opendatacube/odc-stats">N/A</a>
                 </td>
-                <td>
+                <td data-label="GitHub Age">
                     <div class="age-display">
                         
                             <span>N/A</span>
                         
                     </div>
                 </td>
-                <td>
+                <td data-label="Conda-Forge Version">
                     
                         <a href="https://anaconda.org/conda-forge/odc-stats">1.0.47</a>
                     
@@ -240,8 +313,8 @@
             </tr>
             
             <tr data-original-index="3">
-                <td><a href="https://pypi.org/project/odc-geo">odc-geo</a></td>
-                <td>
+                <td data-label="Package"><a href="https://pypi.org/project/odc-geo">odc-geo</a></td>
+                <td data-label="PyPI Version">
                     <a href="https://pypi.org/project/odc-geo/0.4.10/">0.4.10</a>
                     
                         <span class="prerelease">
@@ -249,7 +322,7 @@
                         </span>
                     
                 </td>
-                <td>
+                <td data-label="PyPI Age">
                     <div class="age-display">
                         
                             <span class="pypi-stable-age" data-published-at="2025-03-03T04:12:22.114450Z"></span>
@@ -262,10 +335,10 @@
                         
                     </div>
                 </td>
-                <td>
+                <td data-label="GitHub Version">
                     <a href="https://github.com/opendatacube/odc-geo/releases/tag/v0.4.10">v0.4.10</a>
                 </td>
-                <td>
+                <td data-label="GitHub Age">
                     <div class="age-display">
                         
                             <span class="github-stable-age" data-published-at="2025-03-03T04:21:43Z"></span>
@@ -273,7 +346,7 @@
                         
                     </div>
                 </td>
-                <td>
+                <td data-label="Conda-Forge Version">
                     
                         <a href="https://anaconda.org/conda-forge/odc-geo">0.5.0rc1</a>
                     
@@ -281,12 +354,12 @@
             </tr>
             
             <tr data-original-index="4">
-                <td><a href="https://pypi.org/project/odc-algo">odc-algo</a></td>
-                <td>
+                <td data-label="Package"><a href="https://pypi.org/project/odc-algo">odc-algo</a></td>
+                <td data-label="PyPI Version">
                     <a href="https://pypi.org/project/odc-algo/1.0.1/">1.0.1</a>
                     
                 </td>
-                <td>
+                <td data-label="PyPI Age">
                     <div class="age-display">
                         
                             <span class="pypi-stable-age" data-published-at="2025-06-17T00:21:41.050285Z"></span>
@@ -295,10 +368,10 @@
                         
                     </div>
                 </td>
-                <td>
+                <td data-label="GitHub Version">
                     <a href="https://github.com/opendatacube/odc-algo/releases/tag/1.0.1">1.0.1</a>
                 </td>
-                <td>
+                <td data-label="GitHub Age">
                     <div class="age-display">
                         
                             <span class="github-stable-age" data-published-at="2025-06-17T00:20:58Z"></span>
@@ -306,7 +379,7 @@
                         
                     </div>
                 </td>
-                <td>
+                <td data-label="Conda-Forge Version">
                     
                         <a href="https://anaconda.org/conda-forge/odc-algo">1.0.1</a>
                     
@@ -314,12 +387,12 @@
             </tr>
             
             <tr data-original-index="5">
-                <td><a href="https://pypi.org/project/datacube-alchemist">datacube-alchemist</a></td>
-                <td>
+                <td data-label="Package"><a href="https://pypi.org/project/datacube-alchemist">datacube-alchemist</a></td>
+                <td data-label="PyPI Version">
                     <a href="https://pypi.org/project/datacube-alchemist/0.6.7/">0.6.7</a>
                     
                 </td>
-                <td>
+                <td data-label="PyPI Age">
                     <div class="age-display">
                         
                             <span class="pypi-stable-age" data-published-at="2023-09-01T05:59:34.497489Z"></span>
@@ -328,10 +401,10 @@
                         
                     </div>
                 </td>
-                <td>
+                <td data-label="GitHub Version">
                     <a href="https://github.com/opendatacube/datacube-alchemist/releases/tag/0.6.7">0.6.7</a>
                 </td>
-                <td>
+                <td data-label="GitHub Age">
                     <div class="age-display">
                         
                             <span class="github-stable-age" data-published-at="2023-09-01T06:28:08Z"></span>
@@ -339,7 +412,7 @@
                         
                     </div>
                 </td>
-                <td>
+                <td data-label="Conda-Forge Version">
                     
                         <span>N/A</span>
                     
@@ -347,12 +420,12 @@
             </tr>
             
             <tr data-original-index="6">
-                <td><a href="https://pypi.org/project/datacube-ows">datacube-ows</a></td>
-                <td>
+                <td data-label="Package"><a href="https://pypi.org/project/datacube-ows">datacube-ows</a></td>
+                <td data-label="PyPI Version">
                     <a href="https://pypi.org/project/datacube-ows/1.9.3/">1.9.3</a>
                     
                 </td>
-                <td>
+                <td data-label="PyPI Age">
                     <div class="age-display">
                         
                             <span class="pypi-stable-age" data-published-at="2025-07-11T04:35:26.465387Z"></span>
@@ -361,10 +434,10 @@
                         
                     </div>
                 </td>
-                <td>
+                <td data-label="GitHub Version">
                     <a href="https://github.com/opendatacube/datacube-ows/releases/tag/1.9.3">1.9.3</a>
                 </td>
-                <td>
+                <td data-label="GitHub Age">
                     <div class="age-display">
                         
                             <span class="github-stable-age" data-published-at="2025-07-11T04:14:03Z"></span>
@@ -372,7 +445,7 @@
                         
                     </div>
                 </td>
-                <td>
+                <td data-label="Conda-Forge Version">
                     
                         <span>N/A</span>
                     
@@ -380,12 +453,12 @@
             </tr>
             
             <tr data-original-index="7">
-                <td><a href="https://pypi.org/project/datacube-explorer">datacube-explorer</a></td>
-                <td>
+                <td data-label="Package"><a href="https://pypi.org/project/datacube-explorer">datacube-explorer</a></td>
+                <td data-label="PyPI Version">
                     <a href="https://pypi.org/project/datacube-explorer/2.12.4/">2.12.4</a>
                     
                 </td>
-                <td>
+                <td data-label="PyPI Age">
                     <div class="age-display">
                         
                             <span class="pypi-stable-age" data-published-at="2024-11-25T06:15:21.070046Z"></span>
@@ -394,10 +467,10 @@
                         
                     </div>
                 </td>
-                <td>
+                <td data-label="GitHub Version">
                     <a href="https://github.com/opendatacube/datacube-explorer/releases/tag/3.0.0">3.0.0</a>
                 </td>
-                <td>
+                <td data-label="GitHub Age">
                     <div class="age-display">
                         
                             <span class="github-stable-age" data-published-at="2024-12-23T03:51:48Z"></span>
@@ -405,7 +478,7 @@
                         
                     </div>
                 </td>
-                <td>
+                <td data-label="Conda-Forge Version">
                     
                         <span>N/A</span>
                     
@@ -413,8 +486,8 @@
             </tr>
             
             <tr data-original-index="8">
-                <td><a href="https://pypi.org/project/odc-loader">odc-loader</a></td>
-                <td>
+                <td data-label="Package"><a href="https://pypi.org/project/odc-loader">odc-loader</a></td>
+                <td data-label="PyPI Version">
                     <a href="https://pypi.org/project/odc-loader/0.5.1/">0.5.1</a>
                     
                         <span class="prerelease">
@@ -422,7 +495,7 @@
                         </span>
                     
                 </td>
-                <td>
+                <td data-label="PyPI Age">
                     <div class="age-display">
                         
                             <span class="pypi-stable-age" data-published-at="2025-04-03T00:14:01.687146Z"></span>
@@ -435,10 +508,10 @@
                         
                     </div>
                 </td>
-                <td>
+                <td data-label="GitHub Version">
                     <a href="https://github.com/opendatacube/odc-loader/releases/tag/v0.5.1">v0.5.1</a>
                 </td>
-                <td>
+                <td data-label="GitHub Age">
                     <div class="age-display">
                         
                             <span class="github-stable-age" data-published-at="2025-04-03T00:13:24Z"></span>
@@ -446,7 +519,7 @@
                         
                     </div>
                 </td>
-                <td>
+                <td data-label="Conda-Forge Version">
                     
                         <a href="https://anaconda.org/conda-forge/odc-loader">0.5.1</a>
                     
@@ -454,12 +527,12 @@
             </tr>
             
             <tr data-original-index="9">
-                <td><a href="https://pypi.org/project/odc-dscache">odc-dscache</a></td>
-                <td>
+                <td data-label="Package"><a href="https://pypi.org/project/odc-dscache">odc-dscache</a></td>
+                <td data-label="PyPI Version">
                     <a href="https://pypi.org/project/odc-dscache/1.9.1/">1.9.1</a>
                     
                 </td>
-                <td>
+                <td data-label="PyPI Age">
                     <div class="age-display">
                         
                             <span class="pypi-stable-age" data-published-at="2025-07-10T03:14:57.827283Z"></span>
@@ -468,17 +541,17 @@
                         
                     </div>
                 </td>
-                <td>
+                <td data-label="GitHub Version">
                     <a href="https://github.com/opendatacube/odc-dscache">N/A</a>
                 </td>
-                <td>
+                <td data-label="GitHub Age">
                     <div class="age-display">
                         
                             <span>N/A</span>
                         
                     </div>
                 </td>
-                <td>
+                <td data-label="Conda-Forge Version">
                     
                         <a href="https://anaconda.org/conda-forge/odc-dscache">0.2.3</a>
                     
@@ -486,12 +559,12 @@
             </tr>
             
             <tr data-original-index="10">
-                <td><a href="https://pypi.org/project/eodatasets3">eo-datasets</a></td>
-                <td>
+                <td data-label="Package"><a href="https://pypi.org/project/eodatasets3">eo-datasets</a></td>
+                <td data-label="PyPI Version">
                     <a href="https://pypi.org/project/eodatasets3/1.9.3/">1.9.3</a>
                     
                 </td>
-                <td>
+                <td data-label="PyPI Age">
                     <div class="age-display">
                         
                             <span class="pypi-stable-age" data-published-at="2025-05-20T06:05:41.138310Z"></span>
@@ -500,10 +573,10 @@
                         
                     </div>
                 </td>
-                <td>
+                <td data-label="GitHub Version">
                     <a href="https://github.com/opendatacube/eo-datasets/releases/tag/eodatasets3-1.9.3">eodatasets3-1.9.3</a>
                 </td>
-                <td>
+                <td data-label="GitHub Age">
                     <div class="age-display">
                         
                             <span class="github-stable-age" data-published-at="2025-05-20T06:04:56Z"></span>
@@ -511,7 +584,7 @@
                         
                     </div>
                 </td>
-                <td>
+                <td data-label="Conda-Forge Version">
                     
                         <a href="https://anaconda.org/conda-forge/eodatasets3">1.9.3</a>
                     
@@ -519,12 +592,12 @@
             </tr>
             
             <tr data-original-index="11">
-                <td><a href="https://pypi.org/project/odc-io">odc-io</a></td>
-                <td>
+                <td data-label="Package"><a href="https://pypi.org/project/odc-io">odc-io</a></td>
+                <td data-label="PyPI Version">
                     <a href="https://pypi.org/project/odc-io/0.2.2/">0.2.2</a>
                     
                 </td>
-                <td>
+                <td data-label="PyPI Age">
                     <div class="age-display">
                         
                             <span class="pypi-stable-age" data-published-at="2023-11-15T03:26:21.415914Z"></span>
@@ -533,17 +606,17 @@
                         
                     </div>
                 </td>
-                <td>
+                <td data-label="GitHub Version">
                     <a href="https://github.com/opendatacube/odc-tools">N/A</a>
                 </td>
-                <td>
+                <td data-label="GitHub Age">
                     <div class="age-display">
                         
                             <span>N/A</span>
                         
                     </div>
                 </td>
-                <td>
+                <td data-label="Conda-Forge Version">
                     
                         <a href="https://anaconda.org/conda-forge/odc-io">0.2.2</a>
                     
@@ -551,12 +624,12 @@
             </tr>
             
             <tr data-original-index="12">
-                <td><a href="https://pypi.org/project/odc-cloud">odc-cloud</a></td>
-                <td>
+                <td data-label="Package"><a href="https://pypi.org/project/odc-cloud">odc-cloud</a></td>
+                <td data-label="PyPI Version">
                     <a href="https://pypi.org/project/odc-cloud/0.2.5/">0.2.5</a>
                     
                 </td>
-                <td>
+                <td data-label="PyPI Age">
                     <div class="age-display">
                         
                             <span class="pypi-stable-age" data-published-at="2024-01-17T01:07:12.404052Z"></span>
@@ -565,17 +638,17 @@
                         
                     </div>
                 </td>
-                <td>
+                <td data-label="GitHub Version">
                     <a href="https://github.com/opendatacube/odc-tools">N/A</a>
                 </td>
-                <td>
+                <td data-label="GitHub Age">
                     <div class="age-display">
                         
                             <span>N/A</span>
                         
                     </div>
                 </td>
-                <td>
+                <td data-label="Conda-Forge Version">
                     
                         <a href="https://anaconda.org/conda-forge/odc-cloud">0.2.5</a>
                     
@@ -583,12 +656,12 @@
             </tr>
             
             <tr data-original-index="13">
-                <td><a href="https://pypi.org/project/odc-ui">odc-ui</a></td>
-                <td>
+                <td data-label="Package"><a href="https://pypi.org/project/odc-ui">odc-ui</a></td>
+                <td data-label="PyPI Version">
                     <a href="https://pypi.org/project/odc-ui/0.2.1/">0.2.1</a>
                     
                 </td>
-                <td>
+                <td data-label="PyPI Age">
                     <div class="age-display">
                         
                             <span class="pypi-stable-age" data-published-at="2023-11-15T03:26:25.444556Z"></span>
@@ -597,17 +670,17 @@
                         
                     </div>
                 </td>
-                <td>
+                <td data-label="GitHub Version">
                     <a href="https://github.com/opendatacube/odc-tools">N/A</a>
                 </td>
-                <td>
+                <td data-label="GitHub Age">
                     <div class="age-display">
                         
                             <span>N/A</span>
                         
                     </div>
                 </td>
-                <td>
+                <td data-label="Conda-Forge Version">
                     
                         <span>N/A</span>
                     
@@ -615,12 +688,12 @@
             </tr>
             
             <tr data-original-index="14">
-                <td><a href="https://pypi.org/project/odc-apps-cloud">odc-apps-cloud</a></td>
-                <td>
+                <td data-label="Package"><a href="https://pypi.org/project/odc-apps-cloud">odc-apps-cloud</a></td>
+                <td data-label="PyPI Version">
                     <a href="https://pypi.org/project/odc-apps-cloud/0.2.3/">0.2.3</a>
                     
                 </td>
-                <td>
+                <td data-label="PyPI Age">
                     <div class="age-display">
                         
                             <span class="pypi-stable-age" data-published-at="2023-11-15T03:26:18.404842Z"></span>
@@ -629,17 +702,17 @@
                         
                     </div>
                 </td>
-                <td>
+                <td data-label="GitHub Version">
                     <a href="https://github.com/opendatacube/odc-tools">N/A</a>
                 </td>
-                <td>
+                <td data-label="GitHub Age">
                     <div class="age-display">
                         
                             <span>N/A</span>
                         
                     </div>
                 </td>
-                <td>
+                <td data-label="Conda-Forge Version">
                     
                         <span>N/A</span>
                     
@@ -647,12 +720,12 @@
             </tr>
             
             <tr data-original-index="15">
-                <td><a href="https://pypi.org/project/odc-apps-dc-tools">odc-apps-dc-tools</a></td>
-                <td>
+                <td data-label="Package"><a href="https://pypi.org/project/odc-apps-dc-tools">odc-apps-dc-tools</a></td>
+                <td data-label="PyPI Version">
                     <a href="https://pypi.org/project/odc-apps-dc-tools/1.9.3/">1.9.3</a>
                     
                 </td>
-                <td>
+                <td data-label="PyPI Age">
                     <div class="age-display">
                         
                             <span class="pypi-stable-age" data-published-at="2025-07-16T04:08:52.277365Z"></span>
@@ -661,17 +734,17 @@
                         
                     </div>
                 </td>
-                <td>
+                <td data-label="GitHub Version">
                     <a href="https://github.com/opendatacube/odc-tools">N/A</a>
                 </td>
-                <td>
+                <td data-label="GitHub Age">
                     <div class="age-display">
                         
                             <span>N/A</span>
                         
                     </div>
                 </td>
-                <td>
+                <td data-label="Conda-Forge Version">
                     
                         <a href="https://anaconda.org/conda-forge/odc-apps-dc-tools">1.9.3</a>
                     
@@ -693,6 +766,10 @@
 
             headers.forEach(header => {
                 header.addEventListener("click", () => {
+                    // Sorting is a desktop-only feature, disable on mobile view
+                    if (window.innerWidth <= 768) {
+                        return;
+                    }
                     const sortKey = header.dataset.sort;
                     let newSortOrder;
 
