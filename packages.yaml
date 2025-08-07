@@ -34,13 +34,13 @@
   github: opendatacube/eo-datasets
 - name: odc-io
   pypi_name: odc-io
-  github: opendatacube/odc-io
+  github: opendatacube/odc-tools
 - name: odc-cloud
   pypi_name: odc-cloud
-  github: opendatacube/odc-cloud
+  github: opendatacube/odc-tools
 - name: odc-ui
   pypi_name: odc-ui
-  github: opendatacube/odc-ui
+  github: opendatacube/odc-tools
 - name: odc-apps-cloud
   pypi_name: odc-apps-cloud
   github: opendatacube/odc-tools

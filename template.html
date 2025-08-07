@@ -25,6 +25,11 @@
         th.sort-desc::after {
             content: " ▼";
         }
+        .prerelease {
+            font-style: italic;
+            color: #555;
+            font-size: 0.9em;
+        }
     </style>
 </head>
 <body>
@@ -33,20 +38,20 @@
         <thead>
             <tr>
                 <th data-sort="name">Package Name</th>
-                <th data-sort="pypi_version">PyPI Version</th>
-                <th data-sort="pypi_release_age_days">PyPI Release Age (days)</th>
-                <th data-sort="github_version">GitHub Version</th>
-                <th data-sort="github_release_age_days">GitHub Release Age (days)</th>
+                <th data-sort="pypi_stable_version">PyPI Version</th>
+                <th data-sort="pypi_stable_age_days">PyPI Age (days)</th>
+                <th data-sort="github_stable_version">GitHub Version</th>
+                <th data-sort="github_stable_age_days">GitHub Age (days)</th>
             </tr>
         </thead>
         <tbody>
             {% for release in releases %}
             <tr>
-                <td><a href="https://github.com/{{ release.github_repo }}">{{ release.name }}</a></td>
-                <td><a href="https://pypi.org/project/{{ release.pypi_name }}">{{ release.pypi_version }}</a></td>
-                <td>{{ release.pypi_release_age_days }}</td>
-                <td>{{ release.github_version }}</td>
-                <td>{{ release.github_release_age_days }}</td>
+                <td><a href="https://pypi.org/project/{{ release.pypi_name }}">{{ release.name }}</a></td>
+                <td><a href="{{ release.pypi_stable_url }}">{{ release.pypi_stable_version | safe }}</a></td>
+                <td>{{ release.pypi_stable_age_days }}</td>
+                <td><a href="{{ release.github_stable_url }}">{{ release.github_stable_version }}</a></td>
+                <td>{{ release.github_stable_age_days }}</td>
             </tr>
             {% endfor %}
         </tbody>
