@@ -133,25 +133,7 @@ def main():
                 "github_stable_published_at": github_stable["published_at"] if github_stable else "N/A",
             }
 
-            if pypi_stable and pypi_stable["published_at"]:
-                published_at = datetime.fromisoformat(pypi_stable["published_at"])
-                release_info["pypi_stable_age_days"] = (
-                    datetime.now(UTC) - published_at
-                ).days
-            else:
-                release_info["pypi_stable_age_days"] = "N/A"
-
-            # No longer handling PyPI prerelease templating in Python
-
-            if github_stable and github_stable["published_at"]:
-                published_at = datetime.fromisoformat(
-                    github_stable["published_at"].replace("Z", "+00:00")
-                )
-                release_info["github_stable_age_days"] = (
-                    datetime.now(UTC) - published_at
-                ).days
-            else:
-                release_info["github_stable_age_days"] = "N/A"
+            
 
             release_data.append(release_info)
 

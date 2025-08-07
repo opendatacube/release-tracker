@@ -121,9 +121,9 @@
             <tr>
                 <th data-sort="name">Package Name</th>
                 <th data-sort="pypi_stable_version">PyPI Version</th>
-                <th data-sort="pypi_stable_age_days">PyPI Age (days)</th>
+                <th data-sort="pypi_stable_age_days">PyPI Age</th>
                 <th data-sort="github_stable_version">GitHub Version</th>
-                <th data-sort="github_stable_age_days">GitHub Age (days)</th>
+                <th data-sort="github_stable_age_days">GitHub Age</th>
             </tr>
         </thead>
         <tbody>
@@ -141,14 +141,14 @@
                 <td>
                     <div class="age-display">
                         {% if release.pypi_stable_published_at != 'N/A' %}
-                            <span>{{ (now - (release.pypi_stable_published_at | to_datetime)).days }} day{{ 's' if (now - (release.pypi_stable_published_at | to_datetime)).days != 1 else '' }} ago</span>
+                            <span class="pypi-stable-age" data-published-at="{{ release.pypi_stable_published_at }}"></span>
                             <span class="date">({{ release.pypi_stable_published_at | to_datetime | date("%d %B %Y") }})</span>
                         {% else %}
                             <span>N/A</span>
                         {% endif %}
                         {% if release.pypi_prerelease and release.pypi_stable_version != 'N/A' and (release.pypi_prerelease.version | version_compare(release.pypi_stable_version)) > 0 %}
                             <span class="prerelease">
-                                <span>({{ (now - (release.pypi_prerelease.published_at | to_datetime)).days }} day{{ 's' if (now - (release.pypi_prerelease.published_at | to_datetime)).days != 1 else '' }} ago)</span>
+                                <span class="pypi-prerelease-age" data-published-at="{{ release.pypi_prerelease.published_at }}"></span>
                             </span>
                         {% endif %}
                     </div>
@@ -159,7 +159,7 @@
                 <td>
                     <div class="age-display">
                         {% if release.github_stable_published_at != 'N/A' %}
-                            <span>{{ (now - (release.github_stable_published_at | to_datetime)).days }} day{{ 's' if (now - (release.github_stable_published_at | to_datetime)).days != 1 else '' }} ago</span>
+                            <span class="github-stable-age" data-published-at="{{ release.github_stable_published_at }}"></span>
                             <span class="date">({{ release.github_stable_published_at | to_datetime | date("%d %B %Y") }})</span>
                         {% else %}
                             <span>N/A</span>
@@ -221,12 +221,10 @@
 
                             // Extract numeric value for age columns
                             if (sortKey.includes("_age_days")) {
-                                aValue = parseFloat(aValue.split(" ")[0]) || 0; // "22 days ago" -> 22
-                                bValue = parseFloat(bValue.split(" ")[0]) || 0; // "N/A" -> 0
-                            }
-
-                            if (typeof aValue === 'number' && typeof bValue === 'number') {
-                                return currentSortOrder === "asc" ? aValue - bValue : bValue - aValue;
+                                // For age columns, get the data-published-at attribute for accurate sorting
+                                const aDate = new Date(aCell.querySelector('[data-published-at]').dataset.publishedAt);
+                                const bDate = new Date(bCell.querySelector('[data-published-at]').dataset.publishedAt);
+                                return currentSortOrder === "asc" ? aDate.getTime() - bDate.getTime() : bDate.getTime() - aDate.getTime();
                             } else {
                                 return currentSortOrder === "asc" ? aValue.localeCompare(bValue) : bValue.localeCompare(aValue);
                             }
@@ -245,6 +243,26 @@
                 }
                 return index + 1;
             }
+
+            // Function to calculate and display days ago
+            function calculateAndDisplayAge() {
+                const now = new Date();
+                document.querySelectorAll('[data-published-at]').forEach(element => {
+                    const publishedAt = new Date(element.dataset.publishedAt);
+                    const diffTime = Math.abs(now - publishedAt);
+                    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+                    if (diffDays === 0) {
+                        element.innerText = "today";
+                    } else if (diffDays === 1) {
+                        element.innerText = "1 day ago";
+                    } else {
+                        element.innerText = `${diffDays} days ago`;
+                    }
+                });
+            }
+
+            calculateAndDisplayAge(); // Initial calculation
+            setInterval(calculateAndDisplayAge, 3600000); // Update every hour (3600000 ms)
         });
     </script>
   <div id="last-checked-info" style="text-align: center; margin-top: 20px; font-size: 0.8em; color: #888;"></div>
