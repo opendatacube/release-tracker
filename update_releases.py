@@ -1,3 +1,4 @@
+import argparse
 import json
 from datetime import UTC, datetime
 import os
@@ -90,64 +91,72 @@ def get_pypi_releases(package_name):
 
 def main():
     """Main function to update release information."""
-    with open("packages.yaml") as f:
-        packages = yaml.safe_load(f)
+    parser = argparse.ArgumentParser(description="Update Open Data Cube release information.")
+    parser.add_argument("--render-only", action="store_true", help="Only re-render the HTML from releases.json, do not fetch new data.")
+    args = parser.parse_args()
 
-    github_token = os.environ.get("GITHUB_TOKEN")
-    github_cache = {}
+    if args.render_only:
+        with open("releases.json", "r") as f:
+            release_data = json.load(f)
+    else:
+        with open("packages.yaml") as f:
+            packages = yaml.safe_load(f)
 
-    release_data = []
-    for package in packages:
-        github_repo = package["github"]
-        if github_repo not in github_cache:
-            github_cache[github_repo] = get_github_releases(github_repo, github_token)
-        github_stable, _ = github_cache[github_repo]
+        github_token = os.environ.get("GITHUB_TOKEN")
+        github_cache = {}
 
-        pypi_stable, pypi_prerelease = get_pypi_releases(package["pypi_name"])
+        release_data = []
+        for package in packages:
+            github_repo = package["github"]
+            if github_repo not in github_cache:
+                github_cache[github_repo] = get_github_releases(github_repo, github_token)
+            github_stable, _ = github_cache[github_repo]
 
-        release_info = {
-            "name": package["name"],
-            "pypi_name": package["pypi_name"],
-            "github_repo": package["github"],
-            "pypi_stable_version": pypi_stable["version"] if pypi_stable else "N/A",
-            "pypi_stable_url": pypi_stable["url"]
-            if pypi_stable
-            else f"https://pypi.org/project/{package['pypi_name']}/",
-            "pypi_stable_published_at": pypi_stable["published_at"] if pypi_stable else "N/A",
-            "pypi_prerelease": pypi_prerelease,
-            "github_stable_version": github_stable["version"]
-            if github_stable
-            else "N/A",
-            "github_stable_url": github_stable["url"]
-            if github_stable
-            else f"https://github.com/{package['github']}",
-            "github_stable_published_at": github_stable["published_at"] if github_stable else "N/A",
-        }
+            pypi_stable, pypi_prerelease = get_pypi_releases(package["pypi_name"])
 
-        if pypi_stable and pypi_stable["published_at"]:
-            published_at = datetime.fromisoformat(pypi_stable["published_at"])
-            release_info["pypi_stable_age_days"] = (
-                datetime.now(UTC) - published_at
-            ).days
-        else:
-            release_info["pypi_stable_age_days"] = "N/A"
+            release_info = {
+                "name": package["name"],
+                "pypi_name": package["pypi_name"],
+                "github_repo": package["github"],
+                "pypi_stable_version": pypi_stable["version"] if pypi_stable else "N/A",
+                "pypi_stable_url": pypi_stable["url"]
+                if pypi_stable
+                else f"https://pypi.org/project/{package['pypi_name']}/",
+                "pypi_stable_published_at": pypi_stable["published_at"] if pypi_stable else "N/A",
+                "pypi_prerelease": pypi_prerelease,
+                "github_stable_version": github_stable["version"]
+                if github_stable
+                else "N/A",
+                "github_stable_url": github_stable["url"]
+                if github_stable
+                else f"https://github.com/{package['github']}",
+                "github_stable_published_at": github_stable["published_at"] if github_stable else "N/A",
+            }
 
-        # No longer handling PyPI prerelease templating in Python
+            if pypi_stable and pypi_stable["published_at"]:
+                published_at = datetime.fromisoformat(pypi_stable["published_at"])
+                release_info["pypi_stable_age_days"] = (
+                    datetime.now(UTC) - published_at
+                ).days
+            else:
+                release_info["pypi_stable_age_days"] = "N/A"
 
-        if github_stable and github_stable["published_at"]:
-            published_at = datetime.fromisoformat(
-                github_stable["published_at"].replace("Z", "+00:00")
-            )
-            release_info["github_stable_age_days"] = (
-                datetime.now(UTC) - published_at
-            ).days
-        else:
-            release_info["github_stable_age_days"] = "N/A"
+            # No longer handling PyPI prerelease templating in Python
 
-        release_data.append(release_info)
+            if github_stable and github_stable["published_at"]:
+                published_at = datetime.fromisoformat(
+                    github_stable["published_at"].replace("Z", "+00:00")
+                )
+                release_info["github_stable_age_days"] = (
+                    datetime.now(UTC) - published_at
+                ).days
+            else:
+                release_info["github_stable_age_days"] = "N/A"
 
-    with open("releases.json", "w") as f:
-        json.dump(release_data, f, indent=2)
+            release_data.append(release_info)
+
+        with open("releases.json", "w") as f:
+            json.dump(release_data, f, indent=2)
 
     template_loader = jinja2.FileSystemLoader(searchpath="./")
     template_env = jinja2.Environment(loader=template_loader)
