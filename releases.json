@@ -14,8 +14,8 @@
     "github_stable_version": "1.9.7",
     "github_stable_url": "https://github.com/opendatacube/datacube-core/releases/tag/1.9.7",
     "github_stable_published_at": "2025-08-05T03:34:09Z",
-    "pypi_stable_age_days": 1,
-    "github_stable_age_days": 1
+    "pypi_stable_age_days": 2,
+    "github_stable_age_days": 2
   },
   {
     "name": "odc-stac",
@@ -68,8 +68,8 @@
     "github_stable_version": "v0.4.10",
     "github_stable_url": "https://github.com/opendatacube/odc-geo/releases/tag/v0.4.10",
     "github_stable_published_at": "2025-03-03T04:21:43Z",
-    "pypi_stable_age_days": 156,
-    "github_stable_age_days": 156
+    "pypi_stable_age_days": 157,
+    "github_stable_age_days": 157
   },
   {
     "name": "odc-algo",
@@ -119,7 +119,7 @@
     "github_stable_url": "https://github.com/opendatacube/datacube-ows/releases/tag/1.9.3",
     "github_stable_published_at": "2025-07-11T04:14:03Z",
     "pypi_stable_age_days": 26,
-    "github_stable_age_days": 26
+    "github_stable_age_days": 27
   },
   {
     "name": "datacube-explorer",
@@ -133,7 +133,7 @@
     "github_stable_url": "https://github.com/opendatacube/datacube-explorer/releases/tag/3.0.0",
     "github_stable_published_at": "2024-12-23T03:51:48Z",
     "pypi_stable_age_days": 254,
-    "github_stable_age_days": 226
+    "github_stable_age_days": 227
   },
   {
     "name": "odc-loader",
@@ -168,7 +168,7 @@
     "github_stable_version": "N/A",
     "github_stable_url": "https://github.com/opendatacube/odc-dscache",
     "github_stable_published_at": "N/A",
-    "pypi_stable_age_days": 27,
+    "pypi_stable_age_days": 28,
     "github_stable_age_days": "N/A"
   },
   {
@@ -200,7 +200,7 @@
     "github_stable_version": "N/A",
     "github_stable_url": "https://github.com/opendatacube/odc-tools",
     "github_stable_published_at": "N/A",
-    "pypi_stable_age_days": 630,
+    "pypi_stable_age_days": 631,
     "github_stable_age_days": "N/A"
   },
   {
@@ -236,7 +236,7 @@
     "github_stable_version": "N/A",
     "github_stable_url": "https://github.com/opendatacube/odc-tools",
     "github_stable_published_at": "N/A",
-    "pypi_stable_age_days": 630,
+    "pypi_stable_age_days": 631,
     "github_stable_age_days": "N/A"
   },
   {
@@ -254,7 +254,7 @@
     "github_stable_version": "N/A",
     "github_stable_url": "https://github.com/opendatacube/odc-tools",
     "github_stable_published_at": "N/A",
-    "pypi_stable_age_days": 630,
+    "pypi_stable_age_days": 631,
     "github_stable_age_days": "N/A"
   },
   {
@@ -272,7 +272,7 @@
     "github_stable_version": "N/A",
     "github_stable_url": "https://github.com/opendatacube/odc-tools",
     "github_stable_published_at": "N/A",
-    "pypi_stable_age_days": 21,
+    "pypi_stable_age_days": 22,
     "github_stable_age_days": "N/A"
   }
 ]
