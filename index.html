@@ -30,6 +30,7 @@
             text-align: left;
             border-bottom: 1px solid #e0e0e0;
             vertical-align: top; /* Align content to top */
+            position: relative; /* Allow better pre-release positioning */
         }
         th {
             background-color: #e9ecef;
@@ -73,7 +74,10 @@
             color: #6c757d;
             font-size: 0.85em;
             display: block; /* Ensures it's on a new line */
-            margin-top: 2px;
+            margin-top: -10px;
+            position: relative;
+            bottom: 0;
+            padding-top: 10px;
         }
         .age-display {
             display: flex;
@@ -106,7 +110,7 @@
             display: block;
         }
         td:nth-child(2) .prerelease, td:nth-child(4) .prerelease {
-            margin-top: 5px; /* Add some space between stable and prerelease */
+            margin-top: 11px; /* Add some space between stable and prerelease */
         }
     </style>
 </head>
@@ -225,7 +229,7 @@
                         
                         
                             <span class="prerelease">
-                                <span>(97 days ago)</span>
+                                <span>(98 days ago)</span>
                             </span>
                         
                     </div>
@@ -400,7 +404,7 @@
                 <td>
                     <div class="age-display">
                         
-                            <span>27 days ago</span>
+                            <span>28 days ago</span>
                             <span class="date">(10 July 2025)</span>
                         
                         
