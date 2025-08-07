@@ -45,6 +45,7 @@ def get_pypi_releases(package_name):
     url = f"https://pypi.org/pypi/{package_name}/json"
     response = requests.get(url)
     if response.status_code != 200:
+        print(f"Error: Failed to fetch PyPI releases for {package_name}. Status code: {response.status_code}")
         return None, None
 
     data = response.json()
@@ -93,10 +94,15 @@ def main():
         packages = yaml.safe_load(f)
 
     github_token = os.environ.get("GITHUB_TOKEN")
+    github_cache = {}
 
     release_data = []
     for package in packages:
-        github_stable, _ = get_github_releases(package["github"], github_token)
+        github_repo = package["github"]
+        if github_repo not in github_cache:
+            github_cache[github_repo] = get_github_releases(github_repo, github_token)
+        github_stable, _ = github_cache[github_repo]
+
         pypi_stable, pypi_prerelease = get_pypi_releases(package["pypi_name"])
 
         release_info = {
