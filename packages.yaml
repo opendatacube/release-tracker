@@ -1,40 +1,49 @@
 
-- name: odc-stats
-  pypi_name: odc-stats
-  github: opendatacube/odc-stats
-- name: odc-stac
-  pypi_name: odc-stac
-  github: opendatacube/odc-stac
 - name: datacube-core
   pypi_name: datacube
   github: opendatacube/datacube-core
+- name: odc-stac
+  pypi_name: odc-stac
+  github: opendatacube/odc-stac
+- name: odc-stats
+  pypi_name: odc-stats
+  github: opendatacube/odc-stats
 - name: odc-geo
   pypi_name: odc-geo
   github: opendatacube/odc-geo
-- name: odc-aio
-  pypi_name: odc-aio
-  github: opendatacube/odc-aio
+- name: odc-algo
+  pypi_name: odc-algo
+  github: opendatacube/odc-algo
+- name: datacube-alchemist
+  pypi_name: datacube-alchemist
+  github: opendatacube/datacube-alchemist
+- name: datacube-ows
+  pypi_name: datacube-ows
+  github: opendatacube/datacube-ows
+- name: datacube-explorer
+  pypi_name: datacube-explorer
+  github: opendatacube/datacube-explorer
+- name: odc-loader
+  pypi_name: odc-loader
+  github: opendatacube/odc-loader
+- name: odc-dscache
+  pypi_name: odc-dscache
+  github: opendatacube/odc-dscache
+- name: eo-datasets
+  pypi_name: eodatasets3
+  github: opendatacube/eo-datasets
+- name: odc-io
+  pypi_name: odc-io
+  github: opendatacube/odc-io
+- name: odc-cloud
+  pypi_name: odc-cloud
+  github: opendatacube/odc-cloud
+- name: odc-ui
+  pypi_name: odc-ui
+  github: opendatacube/odc-ui
 - name: odc-apps-cloud
   pypi_name: odc-apps-cloud
-  github: opendatacube/odc-apps-cloud
+  github: opendatacube/odc-tools
 - name: odc-apps-dc-tools
   pypi_name: odc-apps-dc-tools
-  github: opendatacube/odc-apps-dc-tools
-- name: odc-apps-eo-tools
-  pypi_name: odc-apps-eo-tools
-  github: opendatacube/odc-apps-eo-tools
-- name: odc-apps-sara
-  pypi_name: odc-apps-sara
-  github: opendatacube/odc-apps-sara
-- name: odc-apps-cloud
-  pypi_name: odc-apps-cloud
-  github: opendatacube/odc-apps-cloud
-- name: odc-apps-dc-tools
-  pypi_name: odc-apps-dc-tools
-  github: opendatacube/odc-apps-dc-tools
-- name: odc-apps-eo-tools
-  pypi_name: odc-apps-eo-tools
-  github: opendatacube/odc-apps-eo-tools
-- name: odc-apps-sara
-  pypi_name: odc-apps-sara
-  github: opendatacube/odc-apps-sara
+  github: opendatacube/odc-tools

@@ -1,7 +1,7 @@
 
 import json
 import os
-from datetime import datetime
+from datetime import datetime, timezone
 
 import jinja2
 import requests
@@ -29,8 +29,10 @@ def get_pypi_latest_release(package_name):
     response = requests.get(url)
     if response.status_code == 200:
         data = response.json()
+        release_date = data.get("releases", {}).get(data["info"]["version"], [{}])[0].get("upload_time_iso_8601")
         return {
             "version": data["info"]["version"],
+            "published_at": release_date,
         }
     return None
 
@@ -48,13 +50,19 @@ def main():
 
         release_info = {
             "name": package["name"],
+            "pypi_name": package["pypi_name"],
+            "github_repo": package["github"],
             "pypi_version": pypi_release["version"] if pypi_release else "N/A",
             "github_version": github_release["version"] if github_release else "N/A",
         }
 
-        if github_release:
+        if pypi_release and pypi_release["published_at"]:
+            published_at = datetime.fromisoformat(pypi_release["published_at"]).replace(tzinfo=timezone.utc)
+            release_info["pypi_release_age_days"] = (datetime.now(timezone.utc) - published_at).days
+
+        if github_release and github_release["published_at"]:
             published_at = datetime.fromisoformat(github_release["published_at"].replace("Z", "+00:00"))
-            release_info["github_release_age_days"] = (datetime.utcnow() - published_at.replace(tzinfo=None)).days
+            release_info["github_release_age_days"] = (datetime.now(timezone.utc) - published_at).days
 
         release_data.append(release_info)
 

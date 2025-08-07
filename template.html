@@ -17,30 +17,81 @@
         }
         th {
             background-color: #f2f2f2;
+            cursor: pointer;
+        }
+        th.sort-asc::after {
+            content: " ▲";
+        }
+        th.sort-desc::after {
+            content: " ▼";
         }
     </style>
 </head>
 <body>
     <h1>Open DataCube Release Tracker</h1>
-    <table>
+    <table id="release-table">
         <thead>
             <tr>
-                <th>Package Name</th>
-                <th>PyPI Version</th>
-                <th>GitHub Version</th>
-                <th>GitHub Release Age (days)</th>
+                <th data-sort="name">Package Name</th>
+                <th data-sort="pypi_version">PyPI Version</th>
+                <th data-sort="pypi_release_age_days">PyPI Release Age (days)</th>
+                <th data-sort="github_version">GitHub Version</th>
+                <th data-sort="github_release_age_days">GitHub Release Age (days)</th>
             </tr>
         </thead>
         <tbody>
             {% for release in releases %}
             <tr>
-                <td>{{ release.name }}</td>
-                <td>{{ release.pypi_version }}</td>
+                <td><a href="https://github.com/{{ release.github_repo }}">{{ release.name }}</a></td>
+                <td><a href="https://pypi.org/project/{{ release.pypi_name }}">{{ release.pypi_version }}</a></td>
+                <td>{{ release.pypi_release_age_days }}</td>
                 <td>{{ release.github_version }}</td>
                 <td>{{ release.github_release_age_days }}</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const table = document.getElementById("release-table");
+            const headers = table.querySelectorAll("th");
+            const tbody = table.querySelector("tbody");
+
+            headers.forEach(header => {
+                header.addEventListener("click", () => {
+                    const sortKey = header.dataset.sort;
+                    const sortOrder = header.classList.contains("sort-asc") ? "desc" : "asc";
+
+                    headers.forEach(h => h.classList.remove("sort-asc", "sort-desc"));
+                    header.classList.add(sortOrder === "asc" ? "sort-asc" : "sort-desc");
+
+                    const rows = Array.from(tbody.querySelectorAll("tr"));
+
+                    rows.sort((a, b) => {
+                        const aValue = a.querySelector(`td:nth-child(${getColumnIndex(header)})`).textContent;
+                        const bValue = b.querySelector(`td:nth-child(${getColumnIndex(header)})`).textContent;
+
+                        if (isNaN(aValue) || isNaN(bValue)) {
+                            return sortOrder === "asc" ? aValue.localeCompare(bValue) : bValue.localeCompare(aValue);
+                        } else {
+                            return sortOrder === "asc" ? aValue - bValue : bValue - aValue;
+                        }
+                    });
+
+                    rows.forEach(row => tbody.appendChild(row));
+                });
+            });
+
+            function getColumnIndex(header) {
+                let index = 0;
+                let current = header;
+                while (current = current.previousElementSibling) {
+                    index++;
+                }
+                return index + 1;
+            }
+        });
+    </script>
 </body>
 </html>

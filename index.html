@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Open DataCube Release Tracker</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            cursor: pointer;
+        }
+        th.sort-asc::after {
+            content: " ▲";
+        }
+        th.sort-desc::after {
+            content: " ▼";
+        }
+    </style>
+</head>
+<body>
+    <h1>Open DataCube Release Tracker</h1>
+    <table id="release-table">
+        <thead>
+            <tr>
+                <th data-sort="name">Package Name</th>
+                <th data-sort="pypi_version">PyPI Version</th>
+                <th data-sort="pypi_release_age_days">PyPI Release Age (days)</th>
+                <th data-sort="github_version">GitHub Version</th>
+                <th data-sort="github_release_age_days">GitHub Release Age (days)</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr>
+                <td><a href="https://github.com/opendatacube/datacube-core">datacube-core</a></td>
+                <td><a href="https://pypi.org/project/datacube">1.9.7</a></td>
+                <td>1</td>
+                <td>1.9.7</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td><a href="https://github.com/opendatacube/odc-stac">odc-stac</a></td>
+                <td><a href="https://pypi.org/project/odc-stac">0.4.0</a></td>
+                <td>97</td>
+                <td>v0.4.0</td>
+                <td>97</td>
+            </tr>
+            
+            <tr>
+                <td><a href="https://github.com/opendatacube/odc-stats">odc-stats</a></td>
+                <td><a href="https://pypi.org/project/odc-stats">1.9.2</a></td>
+                <td>21</td>
+                <td>N/A</td>
+                <td></td>
+            </tr>
+            
+            <tr>
+                <td><a href="https://github.com/opendatacube/odc-geo">odc-geo</a></td>
+                <td><a href="https://pypi.org/project/odc-geo">0.4.10</a></td>
+                <td>156</td>
+                <td>v0.4.10</td>
+                <td>156</td>
+            </tr>
+            
+            <tr>
+                <td><a href="https://github.com/opendatacube/odc-algo">odc-algo</a></td>
+                <td><a href="https://pypi.org/project/odc-algo">1.0.1</a></td>
+                <td>51</td>
+                <td>1.0.1</td>
+                <td>51</td>
+            </tr>
+            
+            <tr>
+                <td><a href="https://github.com/opendatacube/datacube-alchemist">datacube-alchemist</a></td>
+                <td><a href="https://pypi.org/project/datacube-alchemist">0.6.7</a></td>
+                <td>705</td>
+                <td>0.6.7</td>
+                <td>705</td>
+            </tr>
+            
+            <tr>
+                <td><a href="https://github.com/opendatacube/datacube-ows">datacube-ows</a></td>
+                <td><a href="https://pypi.org/project/datacube-ows">1.9.3</a></td>
+                <td>26</td>
+                <td>1.9.3</td>
+                <td>26</td>
+            </tr>
+            
+            <tr>
+                <td><a href="https://github.com/opendatacube/datacube-explorer">datacube-explorer</a></td>
+                <td><a href="https://pypi.org/project/datacube-explorer">2.12.4</a></td>
+                <td>254</td>
+                <td>3.0.0</td>
+                <td>226</td>
+            </tr>
+            
+            <tr>
+                <td><a href="https://github.com/opendatacube/odc-loader">odc-loader</a></td>
+                <td><a href="https://pypi.org/project/odc-loader">0.5.1</a></td>
+                <td>126</td>
+                <td>v0.5.1</td>
+                <td>126</td>
+            </tr>
+            
+            <tr>
+                <td><a href="https://github.com/opendatacube/odc-dscache">odc-dscache</a></td>
+                <td><a href="https://pypi.org/project/odc-dscache">1.9.1</a></td>
+                <td>27</td>
+                <td>N/A</td>
+                <td></td>
+            </tr>
+            
+            <tr>
+                <td><a href="https://github.com/opendatacube/eo-datasets">eo-datasets</a></td>
+                <td><a href="https://pypi.org/project/eodatasets3">1.9.3</a></td>
+                <td>78</td>
+                <td>eodatasets3-1.9.3</td>
+                <td>78</td>
+            </tr>
+            
+            <tr>
+                <td><a href="https://github.com/opendatacube/odc-io">odc-io</a></td>
+                <td><a href="https://pypi.org/project/odc-io">0.2.2</a></td>
+                <td>630</td>
+                <td>N/A</td>
+                <td></td>
+            </tr>
+            
+            <tr>
+                <td><a href="https://github.com/opendatacube/odc-cloud">odc-cloud</a></td>
+                <td><a href="https://pypi.org/project/odc-cloud">0.2.5</a></td>
+                <td>568</td>
+                <td>N/A</td>
+                <td></td>
+            </tr>
+            
+            <tr>
+                <td><a href="https://github.com/opendatacube/odc-ui">odc-ui</a></td>
+                <td><a href="https://pypi.org/project/odc-ui">0.2.1</a></td>
+                <td>630</td>
+                <td>N/A</td>
+                <td></td>
+            </tr>
+            
+            <tr>
+                <td><a href="https://github.com/opendatacube/odc-tools">odc-apps-cloud</a></td>
+                <td><a href="https://pypi.org/project/odc-apps-cloud">0.2.3</a></td>
+                <td>630</td>
+                <td>N/A</td>
+                <td></td>
+            </tr>
+            
+            <tr>
+                <td><a href="https://github.com/opendatacube/odc-tools">odc-apps-dc-tools</a></td>
+                <td><a href="https://pypi.org/project/odc-apps-dc-tools">1.9.3</a></td>
+                <td>21</td>
+                <td>N/A</td>
+                <td></td>
+            </tr>
+            
+        </tbody>
+    </table>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const table = document.getElementById("release-table");
+            const headers = table.querySelectorAll("th");
+            const tbody = table.querySelector("tbody");
+
+            headers.forEach(header => {
+                header.addEventListener("click", () => {
+                    const sortKey = header.dataset.sort;
+                    const sortOrder = header.classList.contains("sort-asc") ? "desc" : "asc";
+
+                    headers.forEach(h => h.classList.remove("sort-asc", "sort-desc"));
+                    header.classList.add(sortOrder === "asc" ? "sort-asc" : "sort-desc");
+
+                    const rows = Array.from(tbody.querySelectorAll("tr"));
+
+                    rows.sort((a, b) => {
+                        const aValue = a.querySelector(`td:nth-child(${getColumnIndex(header)})`).textContent;
+                        const bValue = b.querySelector(`td:nth-child(${getColumnIndex(header)})`).textContent;
+
+                        if (isNaN(aValue) || isNaN(bValue)) {
+                            return sortOrder === "asc" ? aValue.localeCompare(bValue) : bValue.localeCompare(aValue);
+                        } else {
+                            return sortOrder === "asc" ? aValue - bValue : bValue - aValue;
+                        }
+                    });
+
+                    rows.forEach(row => tbody.appendChild(row));
+                });
+            });
+
+            function getColumnIndex(header) {
+                let index = 0;
+                let current = header;
+                while (current = current.previousElementSibling) {
+                    index++;
+                }
+                return index + 1;
+            }
+        });
+    </script>
+</body>
+</html>
