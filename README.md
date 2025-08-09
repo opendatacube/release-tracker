@@ -1,3 +1,5 @@
+[![Update Releases](https://github.com/opendatacube/release-tracker/actions/workflows/update.yml/badge.svg)](https://github.com/opendatacube/release-tracker/actions/workflows/update.yml)
+
 # Open Data Cube Release Tracker
 
 This repository tracks the latest releases of Open Data Cube packages from PyPI, GitHub and Conda-forge.
