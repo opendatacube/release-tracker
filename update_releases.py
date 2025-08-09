@@ -204,6 +204,56 @@ def main():
     with open("index.html", "w") as f:
         f.write(template_combined.render(releases=release_data, now=datetime.now(UTC)))
 
+    update_readme(release_data)
+
+
+def update_readme(releases):
+    """Updates the README.md file with a markdown table of releases."""
+    with open("README.md", "r") as f:
+        readme_content = f.read()
+
+    start_marker = "<!-- START_ODC_RELEASE_TABLE -->"
+    end_marker = "<!-- END_ODC_RELEASE_TABLE -->"
+
+    start_index = readme_content.find(start_marker)
+    end_index = readme_content.find(end_marker)
+
+    if start_index == -1 or end_index == -1:
+        print("Error: Could not find the release table markers in README.md.")
+        return
+
+    table = "| Package | PyPI Version | PyPI Release Date | Conda-forge Version | Conda-forge Release Date |\n"
+    table += "|---|---|---|---|---|\n"
+    for release in releases:
+        pypi_version = release["pypi_stable_version"]
+        pypi_date = release["pypi_stable_published_at"]
+        if pypi_date != "N/A":
+            pypi_date = datetime.fromisoformat(pypi_date.replace("Z", "+00:00")).strftime(
+                "%Y-%m-%d"
+            )
+        conda_version = release["conda_forge_version"]
+        conda_date = "N/A"  # Not available in the current data
+
+        table += f"| [{release['name']}]({release['pypi_stable_url']}) | {pypi_version} | {pypi_date} | {conda_version} | {conda_date} |\n"
+        if (
+            release["pypi_prerelease"]
+            and release["pypi_stable_version"] != "N/A"
+            and parse_version(release["pypi_prerelease"]["version"])
+            > parse_version(release["pypi_stable_version"])
+        ):
+            prerelease_version = release["pypi_prerelease"]["version"]
+            prerelease_date = release["pypi_prerelease"]["published_at"]
+            if prerelease_date != "N/A":
+                prerelease_date = datetime.fromisoformat(
+                    prerelease_date.replace("Z", "+00:00")
+                ).strftime("%Y-%m-%d")
+            table += f"| *Pre-release* | *{prerelease_version}* | *{prerelease_date}* | | |\n"
+
+    new_readme_content = readme_content[: start_index + len(start_marker)]  + "\n" + table + readme_content[end_index:]
+
+    with open("README.md", "w") as f:
+        f.write(new_readme_content)
+
 
 if __name__ == "__main__":
     main()
