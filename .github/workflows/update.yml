@@ -4,6 +4,9 @@ on:
   schedule:
     - cron: "0 */6 * * *"
   workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   update:
@@ -29,7 +32,7 @@ jobs:
       - name: Run update script
         run: uv run python update_releases.py
 
-      - name: Display and changes
+      - name: Display any changes
         run: git diff
 
       - name: Commit changes
@@ -37,4 +40,4 @@ jobs:
         with:
           commit_message: "Update release information"
           branch: main
-          file_pattern: "releases.json index.html"
+          file_pattern: "releases.json README.md index.html"
