@@ -261,9 +261,9 @@
     "name": "odc-apps-dc-tools",
     "pypi_name": "odc-apps-dc-tools",
     "github_repo": "opendatacube/odc-tools",
-    "pypi_stable_version": "1.9.3",
-    "pypi_stable_url": "https://pypi.org/project/odc-apps-dc-tools/1.9.3/",
-    "pypi_stable_published_at": "2025-07-16T04:08:52.277365Z",
+    "pypi_stable_version": "1.9.4",
+    "pypi_stable_url": "https://pypi.org/project/odc-apps-dc-tools/1.9.4/",
+    "pypi_stable_published_at": "2025-08-20T06:04:25.620088Z",
     "pypi_prerelease": {
       "version": "0.2.0a3",
       "published_at": "2021-10-04T01:50:02.316883Z",
