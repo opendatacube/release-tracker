@@ -3,17 +3,17 @@
     "name": "datacube-core",
     "pypi_name": "datacube",
     "github_repo": "opendatacube/datacube-core",
-    "pypi_stable_version": "1.9.7",
-    "pypi_stable_url": "https://pypi.org/project/datacube/1.9.7/",
-    "pypi_stable_published_at": "2025-08-05T03:43:30.771732Z",
+    "pypi_stable_version": "1.9.8",
+    "pypi_stable_url": "https://pypi.org/project/datacube/1.9.8/",
+    "pypi_stable_published_at": "2025-08-22T01:37:59.396544Z",
     "pypi_prerelease": {
       "version": "1.9.1rc2",
       "published_at": "2025-02-25T03:02:12.771577Z",
       "url": "https://pypi.org/project/datacube/1.9.1rc2/"
     },
-    "github_stable_version": "1.9.7",
-    "github_stable_url": "https://github.com/opendatacube/datacube-core/releases/tag/1.9.7",
-    "github_stable_published_at": "2025-08-05T03:34:09Z",
+    "github_stable_version": "1.9.8",
+    "github_stable_url": "https://github.com/opendatacube/datacube-core/releases/tag/1.9.8",
+    "github_stable_published_at": "2025-08-22T01:28:19Z",
     "conda_forge_version": "1.9.7",
     "conda_forge_url": "https://anaconda.org/conda-forge/datacube"
   },
