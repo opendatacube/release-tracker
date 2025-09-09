@@ -143,9 +143,9 @@
     "pypi_stable_url": "https://pypi.org/project/odc-loader/0.5.1/",
     "pypi_stable_published_at": "2025-04-03T00:14:01.687146Z",
     "pypi_prerelease": {
-      "version": "0.6.0rc3",
-      "published_at": "2025-07-28T06:35:44.828036Z",
-      "url": "https://pypi.org/project/odc-loader/0.6.0rc3/"
+      "version": "0.6.0rc4",
+      "published_at": "2025-09-09T09:22:18.743299Z",
+      "url": "https://pypi.org/project/odc-loader/0.6.0rc4/"
     },
     "github_stable_version": "v0.5.1",
     "github_stable_url": "https://github.com/opendatacube/odc-loader/releases/tag/v0.5.1",
