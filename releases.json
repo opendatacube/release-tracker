@@ -39,9 +39,9 @@
     "name": "odc-stats",
     "pypi_name": "odc-stats",
     "github_repo": "opendatacube/odc-stats",
-    "pypi_stable_version": "1.9.6",
-    "pypi_stable_url": "https://pypi.org/project/odc-stats/1.9.6/",
-    "pypi_stable_published_at": "2025-10-08T07:31:14.341155Z",
+    "pypi_stable_version": "1.9.7",
+    "pypi_stable_url": "https://pypi.org/project/odc-stats/1.9.7/",
+    "pypi_stable_published_at": "2025-11-03T03:57:37.134738Z",
     "pypi_prerelease": {
       "version": "1.0.6a0",
       "published_at": "2021-11-09T00:13:22.096306Z",
