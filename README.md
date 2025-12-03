@@ -11,7 +11,7 @@ The `update_releases.py` script fetches the latest version information and gener
 <!-- START_ODC_RELEASE_TABLE -->
 | Package | PyPI Version | PyPI Release Date | Conda-forge Version | Conda-forge Release Date |
 |---|---|---|---|---|
-| [datacube-core](https://pypi.org/project/datacube/1.9.10/) | 1.9.10 | 2025-10-21 | 1.9.10 | N/A |
+| [datacube-core](https://pypi.org/project/datacube/1.9.11/) | 1.9.11 | 2025-12-03 | 1.9.10 | N/A |
 | [odc-stac](https://pypi.org/project/odc-stac/0.4.1/) | 0.4.1 | 2025-11-23 | 0.4.1 | N/A |
 | [odc-stats](https://pypi.org/project/odc-stats/1.9.7/) | 1.9.7 | 2025-11-03 | 1.0.47 | N/A |
 | [odc-geo](https://pypi.org/project/odc-geo/0.4.10/) | 0.4.10 | 2025-03-03 | 0.5.0rc1 | N/A |
@@ -28,7 +28,7 @@ The `update_releases.py` script fetches the latest version information and gener
 | [odc-cloud](https://pypi.org/project/odc-cloud/0.2.5/) | 0.2.5 | 2024-01-17 | 0.2.5 | N/A |
 | [odc-ui](https://pypi.org/project/odc-ui/0.2.1/) | 0.2.1 | 2023-11-15 | N/A | N/A |
 | [odc-apps-cloud](https://pypi.org/project/odc-apps-cloud/0.2.3/) | 0.2.3 | 2023-11-15 | N/A | N/A |
-| [odc-apps-dc-tools](https://pypi.org/project/odc-apps-dc-tools/1.9.5/) | 1.9.5 | 2025-10-23 | 1.9.5 | N/A |
+| [odc-apps-dc-tools](https://pypi.org/project/odc-apps-dc-tools/1.9.6/) | 1.9.6 | 2025-12-03 | 1.9.6 | N/A |
 <!-- END_ODC_RELEASE_TABLE -->
 
 # Styling
