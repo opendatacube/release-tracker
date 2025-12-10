@@ -57,18 +57,18 @@
     "name": "odc-geo",
     "pypi_name": "odc-geo",
     "github_repo": "opendatacube/odc-geo",
-    "pypi_stable_version": "0.4.10",
-    "pypi_stable_url": "https://pypi.org/project/odc-geo/0.4.10/",
-    "pypi_stable_published_at": "2025-03-03T04:12:22.114450Z",
+    "pypi_stable_version": "0.5.0",
+    "pypi_stable_url": "https://pypi.org/project/odc-geo/0.5.0/",
+    "pypi_stable_published_at": "2025-12-09T22:20:30.264939Z",
     "pypi_prerelease": {
       "version": "0.5.0rc1",
       "published_at": "2025-05-01T03:04:49.650498Z",
       "url": "https://pypi.org/project/odc-geo/0.5.0rc1/"
     },
-    "github_stable_version": "v0.4.10",
-    "github_stable_url": "https://github.com/opendatacube/odc-geo/releases/tag/v0.4.10",
-    "github_stable_published_at": "2025-03-03T04:21:43Z",
-    "conda_forge_version": "0.5.0rc1",
+    "github_stable_version": "v0.5.0",
+    "github_stable_url": "https://github.com/opendatacube/odc-geo/releases/tag/v0.5.0",
+    "github_stable_published_at": "2025-12-09T22:13:10Z",
+    "conda_forge_version": "0.5.0",
     "conda_forge_url": "https://anaconda.org/conda-forge/odc-geo"
   },
   {
