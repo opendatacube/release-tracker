@@ -12,7 +12,7 @@ The `update_releases.py` script fetches the latest version information and gener
 | Package | PyPI Version | PyPI Release Date | Conda-forge Version | Conda-forge Release Date |
 |---|---|---|---|---|
 | [datacube-core](https://pypi.org/project/datacube/1.9.11/) | 1.9.11 | 2025-12-03 | 1.9.11 | N/A |
-| [odc-stac](https://pypi.org/project/odc-stac/0.4.1/) | 0.4.1 | 2025-11-23 | 0.4.1 | N/A |
+| [odc-stac](https://pypi.org/project/odc-stac/0.5.0/) | 0.5.0 | 2025-12-10 | 0.4.1 | N/A |
 | [odc-stats](https://pypi.org/project/odc-stats/1.9.7/) | 1.9.7 | 2025-11-03 | 1.0.47 | N/A |
 | [odc-geo](https://pypi.org/project/odc-geo/0.5.0/) | 0.5.0 | 2025-12-09 | 0.5.0 | N/A |
 | [odc-algo](https://pypi.org/project/odc-algo/1.1.1/) | 1.1.1 | 2025-09-07 | 1.1.1 | N/A |
