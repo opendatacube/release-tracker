@@ -14,7 +14,7 @@
     "github_stable_version": "1.9.12",
     "github_stable_url": "https://github.com/opendatacube/datacube-core/releases/tag/1.9.12",
     "github_stable_published_at": "2025-12-22T01:53:19Z",
-    "conda_forge_version": "1.9.11",
+    "conda_forge_version": "1.9.12",
     "conda_forge_url": "https://anaconda.org/conda-forge/datacube"
   },
   {
