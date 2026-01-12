@@ -150,7 +150,7 @@
     "github_stable_version": "0.6.2",
     "github_stable_url": "https://github.com/opendatacube/odc-loader/releases/tag/0.6.2",
     "github_stable_published_at": "2026-01-09T00:12:02Z",
-    "conda_forge_version": "0.6.0",
+    "conda_forge_version": "0.6.2",
     "conda_forge_url": "https://anaconda.org/conda-forge/odc-loader"
   },
   {
