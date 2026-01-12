@@ -139,17 +139,17 @@
     "name": "odc-loader",
     "pypi_name": "odc-loader",
     "github_repo": "opendatacube/odc-loader",
-    "pypi_stable_version": "0.6.2",
-    "pypi_stable_url": "https://pypi.org/project/odc-loader/0.6.2/",
-    "pypi_stable_published_at": "2026-01-09T00:12:47.401297Z",
+    "pypi_stable_version": "0.6.3",
+    "pypi_stable_url": "https://pypi.org/project/odc-loader/0.6.3/",
+    "pypi_stable_published_at": "2026-01-12T09:50:50.492605Z",
     "pypi_prerelease": {
       "version": "0.6.0rc4",
       "published_at": "2025-09-09T09:22:18.743299Z",
       "url": "https://pypi.org/project/odc-loader/0.6.0rc4/"
     },
-    "github_stable_version": "0.6.2",
-    "github_stable_url": "https://github.com/opendatacube/odc-loader/releases/tag/0.6.2",
-    "github_stable_published_at": "2026-01-09T00:12:02Z",
+    "github_stable_version": "0.6.3",
+    "github_stable_url": "https://github.com/opendatacube/odc-loader/releases/tag/0.6.3",
+    "github_stable_published_at": "2026-01-12T09:50:10Z",
     "conda_forge_version": "0.6.2",
     "conda_forge_url": "https://anaconda.org/conda-forge/odc-loader"
   },
