@@ -21,17 +21,17 @@
     "name": "odc-stac",
     "pypi_name": "odc-stac",
     "github_repo": "opendatacube/odc-stac",
-    "pypi_stable_version": "0.5.0",
-    "pypi_stable_url": "https://pypi.org/project/odc-stac/0.5.0/",
-    "pypi_stable_published_at": "2025-12-10T23:22:32.361918Z",
+    "pypi_stable_version": "0.5.1",
+    "pypi_stable_url": "https://pypi.org/project/odc-stac/0.5.1/",
+    "pypi_stable_published_at": "2026-01-15T03:44:14.738384Z",
     "pypi_prerelease": {
       "version": "0.4.0rc4",
       "published_at": "2025-04-28T07:34:30.292789Z",
       "url": "https://pypi.org/project/odc-stac/0.4.0rc4/"
     },
-    "github_stable_version": "v.0.5.0",
-    "github_stable_url": "https://github.com/opendatacube/odc-stac/releases/tag/v.0.5.0",
-    "github_stable_published_at": "2025-12-10T23:19:55Z",
+    "github_stable_version": "v0.5.1",
+    "github_stable_url": "https://github.com/opendatacube/odc-stac/releases/tag/v0.5.1",
+    "github_stable_published_at": "2026-01-15T03:38:45Z",
     "conda_forge_version": "0.5.0",
     "conda_forge_url": "https://anaconda.org/conda-forge/odc-stac"
   },
@@ -150,7 +150,7 @@
     "github_stable_version": "0.6.4",
     "github_stable_url": "https://github.com/opendatacube/odc-loader/releases/tag/0.6.4",
     "github_stable_published_at": "2026-01-14T01:20:25Z",
-    "conda_forge_version": "0.6.3",
+    "conda_forge_version": "0.6.4",
     "conda_forge_url": "https://anaconda.org/conda-forge/odc-loader"
   },
   {
