@@ -14,7 +14,7 @@
     "github_stable_version": "1.9.13",
     "github_stable_url": "https://github.com/opendatacube/datacube-core/releases/tag/1.9.13",
     "github_stable_published_at": "2026-01-14T01:16:43Z",
-    "conda_forge_version": "1.9.13",
+    "conda_forge_version": "N/A",
     "conda_forge_url": "https://anaconda.org/conda-forge/datacube"
   },
   {
@@ -150,7 +150,7 @@
     "github_stable_version": "0.6.4",
     "github_stable_url": "https://github.com/opendatacube/odc-loader/releases/tag/0.6.4",
     "github_stable_published_at": "2026-01-14T01:20:25Z",
-    "conda_forge_version": "0.6.4",
+    "conda_forge_version": "N/A",
     "conda_forge_url": "https://anaconda.org/conda-forge/odc-loader"
   },
   {
@@ -168,7 +168,7 @@
     "github_stable_version": "N/A",
     "github_stable_url": "https://github.com/opendatacube/odc-dscache",
     "github_stable_published_at": "N/A",
-    "conda_forge_version": "1.9.1",
+    "conda_forge_version": "N/A",
     "conda_forge_url": "https://anaconda.org/conda-forge/odc-dscache"
   },
   {
@@ -218,7 +218,7 @@
     "github_stable_version": "N/A",
     "github_stable_url": "https://github.com/opendatacube/odc-tools",
     "github_stable_published_at": "N/A",
-    "conda_forge_version": "0.2.5",
+    "conda_forge_version": "N/A",
     "conda_forge_url": "https://anaconda.org/conda-forge/odc-cloud"
   },
   {
@@ -272,7 +272,7 @@
     "github_stable_version": "N/A",
     "github_stable_url": "https://github.com/opendatacube/odc-tools",
     "github_stable_published_at": "N/A",
-    "conda_forge_version": "1.9.7",
+    "conda_forge_version": "N/A",
     "conda_forge_url": "https://anaconda.org/conda-forge/odc-apps-dc-tools"
   }
 ]
