@@ -50,7 +50,7 @@
     "github_stable_version": "N/A",
     "github_stable_url": "https://github.com/opendatacube/odc-stats",
     "github_stable_published_at": "N/A",
-    "conda_forge_version": "1.0.47",
+    "conda_forge_version": "N/A",
     "conda_forge_url": "https://anaconda.org/conda-forge/odc-stats"
   },
   {
@@ -68,7 +68,7 @@
     "github_stable_version": "v0.5.0",
     "github_stable_url": "https://github.com/opendatacube/odc-geo/releases/tag/v0.5.0",
     "github_stable_published_at": "2025-12-09T22:13:10Z",
-    "conda_forge_version": "0.5.0",
+    "conda_forge_version": "N/A",
     "conda_forge_url": "https://anaconda.org/conda-forge/odc-geo"
   },
   {
@@ -150,7 +150,7 @@
     "github_stable_version": "0.6.4",
     "github_stable_url": "https://github.com/opendatacube/odc-loader/releases/tag/0.6.4",
     "github_stable_published_at": "2026-01-14T01:20:25Z",
-    "conda_forge_version": "0.6.4",
+    "conda_forge_version": "N/A",
     "conda_forge_url": "https://anaconda.org/conda-forge/odc-loader"
   },
   {
