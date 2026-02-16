@@ -272,7 +272,7 @@
     "github_stable_version": "N/A",
     "github_stable_url": "https://github.com/opendatacube/odc-tools",
     "github_stable_published_at": "N/A",
-    "conda_forge_version": "1.9.7",
+    "conda_forge_version": "1.9.8",
     "conda_forge_url": "https://anaconda.org/conda-forge/odc-apps-dc-tools"
   }
 ]
