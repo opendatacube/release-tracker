@@ -14,7 +14,7 @@
     "github_stable_version": "1.9.15",
     "github_stable_url": "https://github.com/opendatacube/datacube-core/releases/tag/1.9.15",
     "github_stable_published_at": "2026-03-10T23:58:28Z",
-    "conda_forge_version": "1.9.14",
+    "conda_forge_version": "1.9.15",
     "conda_forge_url": "https://anaconda.org/conda-forge/datacube"
   },
   {
@@ -68,7 +68,7 @@
     "github_stable_version": "v0.5.1",
     "github_stable_url": "https://github.com/opendatacube/odc-geo/releases/tag/v0.5.1",
     "github_stable_published_at": "2026-03-10T00:52:23Z",
-    "conda_forge_version": "0.5.0",
+    "conda_forge_version": "0.5.1",
     "conda_forge_url": "https://anaconda.org/conda-forge/odc-geo"
   },
   {
@@ -115,9 +115,9 @@
       "published_at": "2024-11-15T05:17:55.519469Z",
       "url": "https://pypi.org/project/datacube-ows/1.9.0rc2/"
     },
-    "github_stable_version": "1.9.9",
-    "github_stable_url": "https://github.com/opendatacube/datacube-ows/releases/tag/1.9.9",
-    "github_stable_published_at": "2026-02-09T22:19:53Z",
+    "github_stable_version": "1.9.10",
+    "github_stable_url": "https://github.com/opendatacube/datacube-ows/releases/tag/1.9.10",
+    "github_stable_published_at": "2026-03-11T05:30:56Z",
     "conda_forge_version": "N/A",
     "conda_forge_url": "https://anaconda.org/conda-forge/datacube-ows"
   },
@@ -261,9 +261,9 @@
     "name": "odc-apps-dc-tools",
     "pypi_name": "odc-apps-dc-tools",
     "github_repo": "opendatacube/odc-tools",
-    "pypi_stable_version": "1.9.8",
-    "pypi_stable_url": "https://pypi.org/project/odc-apps-dc-tools/1.9.8/",
-    "pypi_stable_published_at": "2026-02-09T13:09:56.903523Z",
+    "pypi_stable_version": "1.9.9",
+    "pypi_stable_url": "https://pypi.org/project/odc-apps-dc-tools/1.9.9/",
+    "pypi_stable_published_at": "2026-03-11T03:24:10.228395Z",
     "pypi_prerelease": {
       "version": "0.2.0a3",
       "published_at": "2021-10-04T01:50:02.316883Z",
