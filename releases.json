@@ -107,9 +107,9 @@
     "name": "datacube-ows",
     "pypi_name": "datacube-ows",
     "github_repo": "opendatacube/datacube-ows",
-    "pypi_stable_version": "1.9.10",
-    "pypi_stable_url": "https://pypi.org/project/datacube-ows/1.9.10/",
-    "pypi_stable_published_at": "2026-03-13T04:24:36.119550Z",
+    "pypi_stable_version": "1.9.11",
+    "pypi_stable_url": "https://pypi.org/project/datacube-ows/1.9.11/",
+    "pypi_stable_published_at": "2026-04-10T09:20:04.012969Z",
     "pypi_prerelease": {
       "version": "1.9.0rc2",
       "published_at": "2024-11-15T05:17:55.519469Z",
