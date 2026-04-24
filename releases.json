@@ -107,17 +107,17 @@
     "name": "datacube-ows",
     "pypi_name": "datacube-ows",
     "github_repo": "opendatacube/datacube-ows",
-    "pypi_stable_version": "1.9.12",
-    "pypi_stable_url": "https://pypi.org/project/datacube-ows/1.9.12/",
-    "pypi_stable_published_at": "2026-04-16T04:26:08.864210Z",
+    "pypi_stable_version": "1.9.13",
+    "pypi_stable_url": "https://pypi.org/project/datacube-ows/1.9.13/",
+    "pypi_stable_published_at": "2026-04-24T01:52:34.090364Z",
     "pypi_prerelease": {
       "version": "1.9.0rc2",
       "published_at": "2024-11-15T05:17:55.519469Z",
       "url": "https://pypi.org/project/datacube-ows/1.9.0rc2/"
     },
-    "github_stable_version": "1.9.12",
-    "github_stable_url": "https://github.com/opendatacube/datacube-ows/releases/tag/1.9.12",
-    "github_stable_published_at": "2026-04-16T04:08:20Z",
+    "github_stable_version": "1.9.13",
+    "github_stable_url": "https://github.com/opendatacube/datacube-ows/releases/tag/1.9.13",
+    "github_stable_published_at": "2026-04-24T01:36:32Z",
     "conda_forge_version": "N/A",
     "conda_forge_url": "https://anaconda.org/conda-forge/datacube-ows"
   },
