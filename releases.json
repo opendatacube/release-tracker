@@ -11,9 +11,9 @@
       "published_at": "2025-02-25T03:02:12.771577Z",
       "url": "https://pypi.org/project/datacube/1.9.1rc2/"
     },
-    "github_stable_version": "1.9.18",
-    "github_stable_url": "https://github.com/opendatacube/datacube-core/releases/tag/1.9.18",
-    "github_stable_published_at": "2026-04-16T01:46:04Z",
+    "github_stable_version": "N/A",
+    "github_stable_url": "https://github.com/opendatacube/datacube-core",
+    "github_stable_published_at": "N/A",
     "conda_forge_version": "1.9.18",
     "conda_forge_url": "https://anaconda.org/conda-forge/datacube"
   },
@@ -29,9 +29,9 @@
       "published_at": "2025-04-28T07:34:30.292789Z",
       "url": "https://pypi.org/project/odc-stac/0.4.0rc4/"
     },
-    "github_stable_version": "v0.5.2",
-    "github_stable_url": "https://github.com/opendatacube/odc-stac/releases/tag/v0.5.2",
-    "github_stable_published_at": "2026-01-19T04:57:11Z",
+    "github_stable_version": "N/A",
+    "github_stable_url": "https://github.com/opendatacube/odc-stac",
+    "github_stable_published_at": "N/A",
     "conda_forge_version": "0.5.2",
     "conda_forge_url": "https://anaconda.org/conda-forge/odc-stac"
   },
@@ -65,9 +65,9 @@
       "published_at": "2025-05-01T03:04:49.650498Z",
       "url": "https://pypi.org/project/odc-geo/0.5.0rc1/"
     },
-    "github_stable_version": "v0.5.1",
-    "github_stable_url": "https://github.com/opendatacube/odc-geo/releases/tag/v0.5.1",
-    "github_stable_published_at": "2026-03-10T00:52:23Z",
+    "github_stable_version": "N/A",
+    "github_stable_url": "https://github.com/opendatacube/odc-geo",
+    "github_stable_published_at": "N/A",
     "conda_forge_version": "0.5.1",
     "conda_forge_url": "https://anaconda.org/conda-forge/odc-geo"
   },
@@ -83,9 +83,9 @@
       "published_at": "2021-10-04T01:49:58.605458Z",
       "url": "https://pypi.org/project/odc-algo/0.2.0a4/"
     },
-    "github_stable_version": "1.1.1",
-    "github_stable_url": "https://github.com/opendatacube/odc-algo/releases/tag/1.1.1",
-    "github_stable_published_at": "2025-09-07T23:49:37Z",
+    "github_stable_version": "N/A",
+    "github_stable_url": "https://github.com/opendatacube/odc-algo",
+    "github_stable_published_at": "N/A",
     "conda_forge_version": "1.1.1",
     "conda_forge_url": "https://anaconda.org/conda-forge/odc-algo"
   },
@@ -97,9 +97,9 @@
     "pypi_stable_url": "https://pypi.org/project/datacube-alchemist/0.6.7/",
     "pypi_stable_published_at": "2023-09-01T05:59:34.497489Z",
     "pypi_prerelease": null,
-    "github_stable_version": "0.6.7",
-    "github_stable_url": "https://github.com/opendatacube/datacube-alchemist/releases/tag/0.6.7",
-    "github_stable_published_at": "2023-09-01T06:28:08Z",
+    "github_stable_version": "N/A",
+    "github_stable_url": "https://github.com/opendatacube/datacube-alchemist",
+    "github_stable_published_at": "N/A",
     "conda_forge_version": "N/A",
     "conda_forge_url": "https://anaconda.org/conda-forge/datacube-alchemist"
   },
@@ -129,9 +129,9 @@
     "pypi_stable_url": "https://pypi.org/project/datacube-explorer/3.1.6/",
     "pypi_stable_published_at": "2026-04-23T06:02:10.227208Z",
     "pypi_prerelease": null,
-    "github_stable_version": "3.1.6",
-    "github_stable_url": "https://github.com/opendatacube/datacube-explorer/releases/tag/3.1.6",
-    "github_stable_published_at": "2026-04-23T05:44:37Z",
+    "github_stable_version": "N/A",
+    "github_stable_url": "https://github.com/opendatacube/datacube-explorer",
+    "github_stable_published_at": "N/A",
     "conda_forge_version": "N/A",
     "conda_forge_url": "https://anaconda.org/conda-forge/datacube-explorer"
   },
@@ -147,9 +147,9 @@
       "published_at": "2025-09-09T09:22:18.743299Z",
       "url": "https://pypi.org/project/odc-loader/0.6.0rc4/"
     },
-    "github_stable_version": "0.6.4",
-    "github_stable_url": "https://github.com/opendatacube/odc-loader/releases/tag/0.6.4",
-    "github_stable_published_at": "2026-01-14T01:20:25Z",
+    "github_stable_version": "N/A",
+    "github_stable_url": "https://github.com/opendatacube/odc-loader",
+    "github_stable_published_at": "N/A",
     "conda_forge_version": "0.6.4",
     "conda_forge_url": "https://anaconda.org/conda-forge/odc-loader"
   },
@@ -179,9 +179,9 @@
     "pypi_stable_url": "https://pypi.org/project/eodatasets3/1.9.5/",
     "pypi_stable_published_at": "2026-03-23T23:29:37.058581Z",
     "pypi_prerelease": null,
-    "github_stable_version": "eodatasets3-1.9.5",
-    "github_stable_url": "https://github.com/opendatacube/eo-datasets/releases/tag/eodatasets3-1.9.5",
-    "github_stable_published_at": "2026-03-23T23:28:52Z",
+    "github_stable_version": "N/A",
+    "github_stable_url": "https://github.com/opendatacube/eo-datasets",
+    "github_stable_published_at": "N/A",
     "conda_forge_version": "1.9.3",
     "conda_forge_url": "https://anaconda.org/conda-forge/eodatasets3"
   },
