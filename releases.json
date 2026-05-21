@@ -225,9 +225,9 @@
     "name": "odc-ui",
     "pypi_name": "odc-ui",
     "github_repo": "opendatacube/odc-tools",
-    "pypi_stable_version": "0.2.1",
-    "pypi_stable_url": "https://pypi.org/project/odc-ui/0.2.1/",
-    "pypi_stable_published_at": "2023-11-15T03:26:25.444556Z",
+    "pypi_stable_version": "1.9.0",
+    "pypi_stable_url": "https://pypi.org/project/odc-ui/1.9.0/",
+    "pypi_stable_published_at": "2026-05-21T05:05:00.857292Z",
     "pypi_prerelease": {
       "version": "0.2.0a3",
       "published_at": "2021-12-14T01:26:48.866603Z",

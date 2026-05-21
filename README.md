@@ -24,7 +24,7 @@ The `update_releases.py` script fetches the latest version information and gener
 | [eo-datasets](https://pypi.org/project/eodatasets3/1.9.5/) | 1.9.5 | 2026-03-23 | 1.9.3 | N/A |
 | [odc-io](https://pypi.org/project/odc-io/0.2.2/) | 0.2.2 | 2023-11-15 | 0.2.2 | N/A |
 | [odc-cloud](https://pypi.org/project/odc-cloud/0.2.6/) | 0.2.6 | 2026-02-09 | 0.2.6 | N/A |
-| [odc-ui](https://pypi.org/project/odc-ui/0.2.1/) | 0.2.1 | 2023-11-15 | N/A | N/A |
+| [odc-ui](https://pypi.org/project/odc-ui/1.9.0/) | 1.9.0 | 2026-05-21 | N/A | N/A |
 | [odc-apps-cloud](https://pypi.org/project/odc-apps-cloud/0.2.3/) | 0.2.3 | 2023-11-15 | N/A | N/A |
 | [odc-apps-dc-tools](https://pypi.org/project/odc-apps-dc-tools/1.9.9/) | 1.9.9 | 2026-03-11 | 1.9.9 | N/A |
 <!-- END_ODC_RELEASE_TABLE -->
