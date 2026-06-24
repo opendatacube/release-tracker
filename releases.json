@@ -179,9 +179,9 @@
     "pypi_stable_url": "https://pypi.org/project/eodatasets3/1.9.5/",
     "pypi_stable_published_at": "2026-03-23T23:29:37.058581Z",
     "pypi_prerelease": null,
-    "github_stable_version": "eodatasets3-1.9.5",
-    "github_stable_url": "https://github.com/opendatacube/eo-datasets/releases/tag/eodatasets3-1.9.5",
-    "github_stable_published_at": "2026-03-23T23:28:52Z",
+    "github_stable_version": "eodatasets3-0.30.10",
+    "github_stable_url": "https://github.com/opendatacube/eo-datasets/releases/tag/eodatasets3-0.30.10",
+    "github_stable_published_at": "2026-06-24T04:51:16Z",
     "conda_forge_version": "1.9.3",
     "conda_forge_url": "https://anaconda.org/conda-forge/eodatasets3"
   },
