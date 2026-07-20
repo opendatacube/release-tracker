@@ -75,17 +75,17 @@
     "name": "odc-algo",
     "pypi_name": "odc-algo",
     "github_repo": "opendatacube/odc-algo",
-    "pypi_stable_version": "1.2.0",
-    "pypi_stable_url": "https://pypi.org/project/odc-algo/1.2.0/",
-    "pypi_stable_published_at": "2026-06-26T07:09:04.561849Z",
+    "pypi_stable_version": "1.2.1",
+    "pypi_stable_url": "https://pypi.org/project/odc-algo/1.2.1/",
+    "pypi_stable_published_at": "2026-07-20T05:11:12.568313Z",
     "pypi_prerelease": {
       "version": "0.2.0a4",
       "published_at": "2021-10-04T01:49:58.605458Z",
       "url": "https://pypi.org/project/odc-algo/0.2.0a4/"
     },
-    "github_stable_version": "1.1.1",
-    "github_stable_url": "https://github.com/opendatacube/odc-algo/releases/tag/1.1.1",
-    "github_stable_published_at": "2025-09-07T23:49:37Z",
+    "github_stable_version": "1.2.1",
+    "github_stable_url": "https://github.com/opendatacube/odc-algo/releases/tag/1.2.1",
+    "github_stable_published_at": "2026-07-20T05:10:24Z",
     "conda_forge_version": "1.2.0",
     "conda_forge_url": "https://anaconda.org/conda-forge/odc-algo"
   },
