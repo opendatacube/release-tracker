@@ -86,7 +86,7 @@
     "github_stable_version": "1.2.1",
     "github_stable_url": "https://github.com/opendatacube/odc-algo/releases/tag/1.2.1",
     "github_stable_published_at": "2026-07-20T05:10:24Z",
-    "conda_forge_version": "1.2.0",
+    "conda_forge_version": "1.2.1",
     "conda_forge_url": "https://anaconda.org/conda-forge/odc-algo"
   },
   {
@@ -182,7 +182,7 @@
     "github_stable_version": "eodatasets3-0.30.10",
     "github_stable_url": "https://github.com/opendatacube/eo-datasets/releases/tag/eodatasets3-0.30.10",
     "github_stable_published_at": "2026-06-24T04:51:16Z",
-    "conda_forge_version": "1.9.3",
+    "conda_forge_version": "N/A",
     "conda_forge_url": "https://anaconda.org/conda-forge/eodatasets3"
   },
   {
