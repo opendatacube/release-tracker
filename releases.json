@@ -29,9 +29,9 @@
       "published_at": "2025-04-28T07:34:30.292789Z",
       "url": "https://pypi.org/project/odc-stac/0.4.0rc4/"
     },
-    "github_stable_version": "v0.5.2",
-    "github_stable_url": "https://github.com/opendatacube/odc-stac/releases/tag/v0.5.2",
-    "github_stable_published_at": "2026-01-19T04:57:11Z",
+    "github_stable_version": "v0.5.3",
+    "github_stable_url": "https://github.com/opendatacube/odc-stac/releases/tag/v0.5.3",
+    "github_stable_published_at": "2026-07-29T03:46:30Z",
     "conda_forge_version": "0.5.2",
     "conda_forge_url": "https://anaconda.org/conda-forge/odc-stac"
   },
