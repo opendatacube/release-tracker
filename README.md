@@ -12,13 +12,13 @@ The `update_releases.py` script fetches the latest version information and gener
 | Package | PyPI Version | PyPI Release Date | Conda-forge Version | Conda-forge Release Date |
 |---|---|---|---|---|
 | [datacube-core](https://pypi.org/project/datacube/1.9.21/) | 1.9.21 | 2026-06-11 | 1.9.21 | N/A |
-| [odc-stac](https://pypi.org/project/odc-stac/0.5.2/) | 0.5.2 | 2026-01-19 | 0.5.2 | N/A |
+| [odc-stac](https://pypi.org/project/odc-stac/0.5.3/) | 0.5.3 | 2026-07-30 | 0.5.2 | N/A |
 | [odc-stats](https://pypi.org/project/odc-stats/1.9.7/) | 1.9.7 | 2025-11-03 | 1.0.47 | N/A |
 | [odc-geo](https://pypi.org/project/odc-geo/0.5.3/) | 0.5.3 | 2026-07-16 | 0.5.3 | N/A |
 | [odc-algo](https://pypi.org/project/odc-algo/1.2.1/) | 1.2.1 | 2026-07-20 | 1.2.1 | N/A |
 | [datacube-alchemist](https://pypi.org/project/datacube-alchemist/0.6.7/) | 0.6.7 | 2023-09-01 | N/A | N/A |
 | [datacube-ows](https://pypi.org/project/datacube-ows/1.9.15/) | 1.9.15 | 2026-07-01 | N/A | N/A |
-| [datacube-explorer](https://pypi.org/project/datacube-explorer/3.1.8/) | 3.1.8 | 2026-06-11 | N/A | N/A |
+| [datacube-explorer](https://pypi.org/project/datacube-explorer/3.1.9/) | 3.1.9 | 2026-07-30 | N/A | N/A |
 | [odc-loader](https://pypi.org/project/odc-loader/0.6.4/) | 0.6.4 | 2026-01-14 | 0.6.4 | N/A |
 | [odc-dscache](https://pypi.org/project/odc-dscache/1.9.1/) | 1.9.1 | 2025-07-10 | 1.9.1 | N/A |
 | [eo-datasets](https://pypi.org/project/eodatasets3/1.9.5/) | 1.9.5 | 2026-03-23 | 1.9.3 | N/A |
