@@ -18,7 +18,7 @@ The `update_releases.py` script fetches the latest version information and gener
 | [odc-algo](https://pypi.org/project/odc-algo/1.2.1/) | 1.2.1 | 2026-07-20 | 1.2.1 | N/A |
 | [datacube-alchemist](https://pypi.org/project/datacube-alchemist/0.6.7/) | 0.6.7 | 2023-09-01 | N/A | N/A |
 | [datacube-ows](https://pypi.org/project/datacube-ows/1.9.15/) | 1.9.15 | 2026-07-01 | N/A | N/A |
-| [datacube-explorer](https://pypi.org/project/datacube-explorer/3.1.9/) | 3.1.9 | 2026-07-30 | N/A | N/A |
+| [datacube-explorer](https://pypi.org/project/datacube-explorer/3.1.10/) | 3.1.10 | 2026-07-31 | N/A | N/A |
 | [odc-loader](https://pypi.org/project/odc-loader/0.6.4/) | 0.6.4 | 2026-01-14 | 0.6.4 | N/A |
 | [odc-dscache](https://pypi.org/project/odc-dscache/1.9.1/) | 1.9.1 | 2025-07-10 | 1.9.1 | N/A |
 | [eo-datasets](https://pypi.org/project/eodatasets3/1.9.5/) | 1.9.5 | 2026-03-23 | 1.9.3 | N/A |
