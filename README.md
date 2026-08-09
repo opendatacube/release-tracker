@@ -13,7 +13,7 @@ The `update_releases.py` script fetches the latest version information and gener
 |---|---|---|---|---|
 | [datacube-core](https://pypi.org/project/datacube/1.9.21/) | 1.9.21 | 2026-06-11 | 1.9.21 | N/A |
 | [odc-stac](https://pypi.org/project/odc-stac/0.5.3/) | 0.5.3 | 2026-07-30 | 0.5.3 | N/A |
-| [odc-stats](https://pypi.org/project/odc-stats/1.9.7/) | 1.9.7 | 2025-11-03 | N/A | N/A |
+| [odc-stats](https://pypi.org/project/odc-stats/1.9.7/) | 1.9.7 | 2025-11-03 | 1.0.47 | N/A |
 | [odc-geo](https://pypi.org/project/odc-geo/0.5.3/) | 0.5.3 | 2026-07-16 | 0.5.3 | N/A |
 | [odc-algo](https://pypi.org/project/odc-algo/1.2.1/) | 1.2.1 | 2026-07-20 | 1.2.1 | N/A |
 | [datacube-alchemist](https://pypi.org/project/datacube-alchemist/0.6.7/) | 0.6.7 | 2023-09-01 | N/A | N/A |
@@ -23,7 +23,7 @@ The `update_releases.py` script fetches the latest version information and gener
 | [odc-dscache](https://pypi.org/project/odc-dscache/1.9.1/) | 1.9.1 | 2025-07-10 | 1.9.1 | N/A |
 | [eo-datasets](https://pypi.org/project/eodatasets3/1.9.5/) | 1.9.5 | 2026-03-23 | 1.9.3 | N/A |
 | [odc-io](https://pypi.org/project/odc-io/0.2.2/) | 0.2.2 | 2023-11-15 | 0.2.2 | N/A |
-| [odc-cloud](https://pypi.org/project/odc-cloud/0.2.6/) | 0.2.6 | 2026-02-09 | N/A | N/A |
+| [odc-cloud](https://pypi.org/project/odc-cloud/0.2.6/) | 0.2.6 | 2026-02-09 | 0.2.6 | N/A |
 | [odc-ui](https://pypi.org/project/odc-ui/1.9.0/) | 1.9.0 | 2026-05-21 | N/A | N/A |
 | [odc-apps-cloud](https://pypi.org/project/odc-apps-cloud/0.2.3/) | 0.2.3 | 2023-11-15 | N/A | N/A |
 | [odc-apps-dc-tools](https://pypi.org/project/odc-apps-dc-tools/1.9.9/) | 1.9.9 | 2026-03-11 | 1.9.9 | N/A |
