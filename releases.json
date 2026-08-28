@@ -47,9 +47,9 @@
       "published_at": "2021-11-09T00:13:22.096306Z",
       "url": "https://pypi.org/project/odc-stats/1.0.6a0/"
     },
-    "github_stable_version": "N/A",
-    "github_stable_url": "https://github.com/opendatacube/odc-stats",
-    "github_stable_published_at": "N/A",
+    "github_stable_version": "1.9.13",
+    "github_stable_url": "https://github.com/opendatacube/odc-stats/releases/tag/1.9.13",
+    "github_stable_published_at": "2026-08-28T01:42:35Z",
     "conda_forge_version": "1.0.47",
     "conda_forge_url": "https://anaconda.org/conda-forge/odc-stats"
   },
