@@ -86,7 +86,7 @@
     "github_stable_version": "1.2.2",
     "github_stable_url": "https://github.com/opendatacube/odc-algo/releases/tag/1.2.2",
     "github_stable_published_at": "2026-09-02T04:40:03Z",
-    "conda_forge_version": "1.2.1",
+    "conda_forge_version": "1.2.2",
     "conda_forge_url": "https://anaconda.org/conda-forge/odc-algo"
   },
   {
