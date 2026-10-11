@@ -21,7 +21,7 @@ The `update_releases.py` script fetches the latest version information and gener
 | [datacube-explorer](https://pypi.org/project/datacube-explorer/3.2.1/) | 3.2.1 | 2026-09-07 | N/A | N/A |
 | [odc-loader](https://pypi.org/project/odc-loader/0.6.5/) | 0.6.5 | 2026-10-10 | 0.6.4 | N/A |
 | [odc-dscache](https://pypi.org/project/odc-dscache/1.9.1/) | 1.9.1 | 2025-07-10 | 1.9.1 | N/A |
-| [eo-datasets](https://pypi.org/project/eodatasets3/1.9.5/) | 1.9.5 | 2026-03-23 | 1.9.3 | N/A |
+| [eo-datasets](https://pypi.org/project/eodatasets3/1.9.7/) | 1.9.7 | 2026-10-11 | 1.9.3 | N/A |
 | [odc-io](https://pypi.org/project/odc-io/0.2.2/) | 0.2.2 | 2023-11-15 | 0.2.2 | N/A |
 | [odc-cloud](https://pypi.org/project/odc-cloud/0.2.6/) | 0.2.6 | 2026-02-09 | 0.2.6 | N/A |
 | [odc-ui](https://pypi.org/project/odc-ui/1.9.0/) | 1.9.0 | 2026-05-21 | N/A | N/A |
