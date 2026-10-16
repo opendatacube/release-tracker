@@ -16,12 +16,12 @@ The `update_releases.py` script fetches the latest version information and gener
 | [odc-stats](https://pypi.org/project/odc-stats/1.9.13/) | 1.9.13 | 2026-08-28 | 1.0.47 | N/A |
 | [odc-geo](https://pypi.org/project/odc-geo/0.5.3/) | 0.5.3 | 2026-07-16 | 0.5.3 | N/A |
 | [odc-algo](https://pypi.org/project/odc-algo/1.2.2/) | 1.2.2 | 2026-09-02 | 1.2.2 | N/A |
-| [datacube-alchemist](https://pypi.org/project/datacube-alchemist/0.7.0/) | 0.7.0 | 2026-09-24 | N/A | N/A |
+| [datacube-alchemist](https://pypi.org/project/datacube-alchemist/0.7.1/) | 0.7.1 | 2026-10-16 | N/A | N/A |
 | [datacube-ows](https://pypi.org/project/datacube-ows/1.9.18/) | 1.9.18 | 2026-10-16 | N/A | N/A |
 | [datacube-explorer](https://pypi.org/project/datacube-explorer/3.2.1/) | 3.2.1 | 2026-09-07 | N/A | N/A |
 | [odc-loader](https://pypi.org/project/odc-loader/0.6.5/) | 0.6.5 | 2026-10-10 | 0.6.5 | N/A |
 | [odc-dscache](https://pypi.org/project/odc-dscache/1.9.1/) | 1.9.1 | 2025-07-10 | 1.9.1 | N/A |
-| [eo-datasets](https://pypi.org/project/eodatasets3/1.9.7/) | 1.9.7 | 2026-10-11 | 1.9.3 | N/A |
+| [eo-datasets](https://pypi.org/project/eodatasets3/1.9.9/) | 1.9.9 | 2026-10-16 | 1.9.3 | N/A |
 | [odc-io](https://pypi.org/project/odc-io/0.2.2/) | 0.2.2 | 2023-11-15 | 0.2.2 | N/A |
 | [odc-cloud](https://pypi.org/project/odc-cloud/0.2.6/) | 0.2.6 | 2026-02-09 | 0.2.6 | N/A |
 | [odc-ui](https://pypi.org/project/odc-ui/1.9.0/) | 1.9.0 | 2026-05-21 | N/A | N/A |
