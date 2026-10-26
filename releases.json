@@ -39,17 +39,17 @@
     "name": "odc-stats",
     "pypi_name": "odc-stats",
     "github_repo": "opendatacube/odc-stats",
-    "pypi_stable_version": "1.9.13",
-    "pypi_stable_url": "https://pypi.org/project/odc-stats/1.9.13/",
-    "pypi_stable_published_at": "2026-08-28T04:01:24.883263Z",
+    "pypi_stable_version": "1.9.14",
+    "pypi_stable_url": "https://pypi.org/project/odc-stats/1.9.14/",
+    "pypi_stable_published_at": "2026-10-26T01:08:22.234561Z",
     "pypi_prerelease": {
       "version": "1.0.6a0",
       "published_at": "2021-11-09T00:13:22.096306Z",
       "url": "https://pypi.org/project/odc-stats/1.0.6a0/"
     },
-    "github_stable_version": "1.9.13",
-    "github_stable_url": "https://github.com/opendatacube/odc-stats/releases/tag/1.9.13",
-    "github_stable_published_at": "2026-08-28T01:42:35Z",
+    "github_stable_version": "1.9.14",
+    "github_stable_url": "https://github.com/opendatacube/odc-stats/releases/tag/1.9.14",
+    "github_stable_published_at": "2026-10-26T00:46:04Z",
     "conda_forge_version": "1.0.47",
     "conda_forge_url": "https://anaconda.org/conda-forge/odc-stats"
   },
