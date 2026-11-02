@@ -14,7 +14,7 @@ The `update_releases.py` script fetches the latest version information and gener
 | [datacube-core](https://pypi.org/project/datacube/1.9.22/) | 1.9.22 | 2026-09-01 | 1.9.22 | N/A |
 | [odc-stac](https://pypi.org/project/odc-stac/0.5.3/) | 0.5.3 | 2026-07-30 | 0.5.3 | N/A |
 | [odc-stats](https://pypi.org/project/odc-stats/1.9.14/) | 1.9.14 | 2026-10-26 | 1.0.47 | N/A |
-| [odc-geo](https://pypi.org/project/odc-geo/0.5.3/) | 0.5.3 | 2026-07-16 | 0.5.3 | N/A |
+| [odc-geo](https://pypi.org/project/odc-geo/0.5.4/) | 0.5.4 | 2026-11-02 | 0.5.4 | N/A |
 | [odc-algo](https://pypi.org/project/odc-algo/1.2.2/) | 1.2.2 | 2026-09-02 | 1.2.2 | N/A |
 | [datacube-alchemist](https://pypi.org/project/datacube-alchemist/0.7.4/) | 0.7.4 | 2026-10-22 | N/A | N/A |
 | [datacube-ows](https://pypi.org/project/datacube-ows/1.9.19/) | 1.9.19 | 2026-10-23 | N/A | N/A |
